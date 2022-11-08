@@ -9,20 +9,26 @@ function Header(props) {
       height: '65px',
       display: 'flex',
       justifyContent: 'space-between',
-      paddingTop: '15px',
-      paddingBottom: '15px',
+      paddingTop: '7.5px',
+      paddingBottom: '7.5px',
       paddingRight: '30px',
-      paddingLeft: '30px',
+      paddingLeft: '16px',
     },
     menuIcon: {
       color: '#4C81C7',
       fontSize: '35px',
+      marginTop: '7.5px',
+      marginBottom: '7.5px',
     },
+    headerLogo: {
+      width: '135px',
+      height: '50px',
+    }
   }
 
   return (
     <Box sx={styles.headerContainer}>
-      <span>ETC LOGO</span>
+      <img src={process.env.PUBLIC_URL + '/assets/Logo.png'} alt="ETC Services Logo" style={styles.headerLogo}></img>
       <MenuIcon sx={styles.menuIcon}/>
     </Box>
   );

@@ -60,6 +60,10 @@ function Footer(props) {
     icon: {
       fontSize: '20px',
       marginRight: '30px',
+    },
+    footerLogo: {
+      width: '126px',
+      height: '45px',
     }
   }
 
@@ -67,7 +71,7 @@ function Footer(props) {
     <Box sx={styles.footerContainer}>
       <Box sx={styles.footerLinksAndLogoContainer}>
         <Box sx={styles.footerLogoContainer}>
-          <span>ETC LOGO</span>
+          <img src={process.env.PUBLIC_URL + '/assets/Logo.png'} alt="ETC Services Logo" style={styles.footerLogo}></img>
         </Box>
         <Box sx={styles.footerLinksContainer}>
           <a style={styles.footerLinks}>Services</a>
