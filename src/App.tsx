@@ -6,7 +6,7 @@ import WhyUs from "./components/WhyUs";
 import { Pages } from "./types/types";
 
 function App() {
-  const [visiblePage, setVisiblePage] = useState(Pages.WHY_US);
+  const [visiblePage, setVisiblePage] = useState(Pages.HOME);
   return (
     <>
       <Header setVisiblePage={setVisiblePage} />
