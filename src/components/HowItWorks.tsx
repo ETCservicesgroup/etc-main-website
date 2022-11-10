@@ -34,11 +34,13 @@ const HowItWorks = () => {
       background: 'rgba(238, 238, 238, 0.8)',
       display: 'flex',
       padding: '16px',
+      justifyContent: 'space-evenly'
     },
     cardContainerStyle2: {
       display: 'flex',
       flexDirection: 'row-reverse',
       padding: '16px',
+      justifyContent: 'space-evenly'
     },
     iconStyle: {
       width: '185px',
@@ -168,7 +170,7 @@ const HowItWorks = () => {
         </Box>
       </Box>
       <Box sx={styles.howItWorksContainer}>
-        {cardContents.map((cardContent, index) => {
+        {cardContents.map((cardContent) => {
           return (
             <Card 
               iconUrl = {cardContent.iconUrl}

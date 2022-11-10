@@ -28,6 +28,8 @@ function Services() {
       marginBottom: '41px',
       paddingTop: '23px',
       textAlign: 'center',
+      maxWidth: '390px',
+      width: '100vw',
     },
     cardLabelStyle: {
       fontStyle: 'normal',
@@ -108,24 +110,35 @@ function Services() {
     },
     quoteContainer: {
       textAlign: 'center',
+      paddingLeft: '16px',
+      paddingRight: '16px',
     },
     listContainer: {
-      marginRight: '16px',
-      marginLeft: '16px',
-      marginTop: '30px',
-      marginBottom: '35px',
       background: 'rgba(238, 238, 238, 0.8)',
       boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)',
       borderRadius: '20px',
-      paddingTop: '28px',
-      paddingRight: '16px',
-      paddingBottom: '28px',
       fontStyle: 'normal',
       fontWeight: 400,
       fontSize: '16px',
       lineHeight: '20px',
-      color: '#06283D'
-    }
+      color: '#06283D',
+      width: 'calc(100vw - 32px)',
+      maxWidth: '390px',
+      paddingTop: '28px',
+      paddingBottom: '28px',
+      paddingRight: '20px',
+    },
+    listWrapperContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      margin: '35px 16px',
+    },
+    cardsContainerStyle: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
   };
   const cardContents = [
     {
@@ -222,22 +235,24 @@ function Services() {
         <span style={styles.ourText}>Our</span>
         <span style={{...styles.ourText, ...styles.servicesText}}> Services.</span>
       </Box>
-      {cardContents.map((cardContent) => {
-        return (
-          <Card 
-            cardLabel = {cardContent.cardLabel}
-            cardContent = {cardContent.cardContent}
-            cardContainerStyle = {cardContent.cardContainerStyle}
-            cardLabelStyle = {cardContent.cardLabelStyle}
-            cardContentStyle = {cardContent.cardContentStyle}
-            page = {Pages.SERVICES}
-            buttonLabel = 'Hire Stafff'
-            buttonWrapperStyle = {cardContent.buttonWrapperStyle}
-            buttonStyle = {cardContent.buttonStyle}
-            buttonLabelStyle = {cardContent.buttonTextStyle}
-            />
-        )
-      })}
+      <Box sx={styles.cardsContainerStyle}>
+        {cardContents.map((cardContent) => {
+          return (
+            <Card
+              cardLabel = {cardContent.cardLabel}
+              cardContent = {cardContent.cardContent}
+              cardContainerStyle = {cardContent.cardContainerStyle}
+              cardLabelStyle = {cardContent.cardLabelStyle}
+              cardContentStyle = {cardContent.cardContentStyle}
+              page = {Pages.SERVICES}
+              buttonLabel = 'Hire Stafff'
+              buttonWrapperStyle = {cardContent.buttonWrapperStyle}
+              buttonStyle = {cardContent.buttonStyle}
+              buttonLabelStyle = {cardContent.buttonTextStyle}
+              />
+          )
+        })}
+      </Box>
       <Box sx={styles.serviceCoverageLabelContainer}>
         <span style={styles.serviceCoverageLabel}>
           Service Coverage
@@ -263,14 +278,16 @@ function Services() {
       <Box sx={styles.quoteContainer}>
         <span style={styles.quoteText}>Our Tools and Systems to help you manage your staff remotely</span>
       </Box>
-      <Box sx={styles.listContainer}>
-        <ul style={{margin: '0px'}}>
-          <li>Website and Applications Tracking</li>
-          <li>Time tracking and reporting</li>
-          <li>Screenshot reports</li>
-          <li>Productivity Reports</li>
-          <li>Internet Connectivity Report</li>
-        </ul>
+      <Box sx={styles.listWrapperContainer}>
+        <Box sx={styles.listContainer}>
+          <ul style={{margin: '0px'}}>
+            <li>Website and Applications Tracking</li>
+            <li>Time tracking and reporting</li>
+            <li>Screenshot reports</li>
+            <li>Productivity Reports</li>
+            <li>Internet Connectivity Report</li>
+          </ul>
+        </Box>
       </Box>
     </>
   );
