@@ -109,6 +109,7 @@ function Header(props: IHeaderProps) {
             e.stopPropagation();
             setVisiblePage(Pages.HOME);
             handleClose(e);
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
           }}
         >
           <span style={styles.menuItemLabel}>Home</span>
@@ -121,6 +122,7 @@ function Header(props: IHeaderProps) {
             e.stopPropagation();
             setVisiblePage(Pages.SERVICES);
             handleClose(e);
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
           }}
         >
           <span style={styles.menuItemLabel}>Services</span>
@@ -133,6 +135,7 @@ function Header(props: IHeaderProps) {
             e.stopPropagation();
             setVisiblePage(Pages.WHY_US);
             handleClose(e);
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
           }}
         >
           <span style={styles.menuItemLabel}>Why Us</span>
@@ -145,6 +148,7 @@ function Header(props: IHeaderProps) {
             e.stopPropagation();
             setVisiblePage(Pages.HOW_IT_WORKS);
             handleClose(e);
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
           }}
         >
           <span style={styles.menuItemLabel}>How it Works</span>
@@ -157,6 +161,7 @@ function Header(props: IHeaderProps) {
             e.stopPropagation();
             setVisiblePage(Pages.FAQ);
             handleClose(e);
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
           }}
         >
           <span style={styles.menuItemLabel}>FAQ</span>
@@ -169,6 +174,7 @@ function Header(props: IHeaderProps) {
             e.stopPropagation();
             setVisiblePage(Pages.CONTACT_US);
             handleClose(e);
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
           }}
         >
           <span style={styles.menuItemLabel}>Contact Us</span>
