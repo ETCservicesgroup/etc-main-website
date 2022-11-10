@@ -1,4 +1,5 @@
 import { Box, Button } from "@mui/material";
+import { Pages } from "../types/types";
 import Card from "./Card";
 
 const WhyUs = () => {
@@ -237,7 +238,9 @@ const WhyUs = () => {
               iconStyle = {cardContent.iconStyle}
               cardLabelStyle = {cardContent.cardLabelStyle}
               cardContentStyle = {cardContent.cardContentStyle}
-              iconAlt = {cardContent.iconAlt} />
+              iconAlt = {cardContent.iconAlt}
+              page = {Pages.WHY_US} 
+              />
           )
         })}
       </Box>
