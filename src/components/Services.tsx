@@ -1,0 +1,279 @@
+import { Box } from "@mui/material";
+import { Pages } from "../types/types";
+import Card from "./Card";
+
+function Services() {
+  const styles = {
+    headerContainer: {
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/servicesHeader.png'})`,
+      height: '137px',
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      padding: '30px 16px',
+      marginBottom: '35px',
+    },
+    ourText: {
+      fontStyle: 'normal',
+      fontWeight: 700,
+      fontSize: '40px',
+      lineHeight: '75px',
+      color: '#47B5FF',
+    },
+    servicesText: {
+      color: '#DFF6FF',
+    },
+    cardContainerStyle: {
+      background: 'rgba(238, 238, 238, 0.8)',
+      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)',
+      marginBottom: '41px',
+      paddingTop: '23px',
+      textAlign: 'center',
+    },
+    cardLabelStyle: {
+      fontStyle: 'normal',
+      fontWeight: 700,
+      fontSize: '20px',
+      lineHeight: '30px',
+      color: '#4C81C7',
+      padding: '16px',
+    },
+    cardContentStyle: {
+      fontStyle: 'normal',
+      fontWeight: 400,
+      fontSize: '14px',
+      lineHeight: '20px',
+      color: '#06283D',
+      textAlign: 'left',
+    },
+    getStartedButtonSx: {
+      background: '#4C81C7',
+      borderRadius: '20px',
+      textTransform: 'none',
+      width: '169px',
+      height: '41px',
+      margin: '0 auto',
+    },
+    getStartedTextSx: {
+      fontWeight: 500,
+      fontSize: '16px',
+      color: '#DFF6FF',
+    },
+    buttonWrapper: {
+      textAlign: 'center',
+      transform: 'translateY(22px)',
+    },
+    serviceCoverageLabelContainer: {
+      position: 'absolute',
+      width: '225px',
+      background: '#06283D',
+      borderRadius: '50px',
+      textAlign: 'right',
+      padding: '5px',
+      height: '44px',
+      transform: 'translate(-20px, -22px)',
+      paddingRight: '20px',
+    },
+    serviceCoverageLabel: {
+      fontSize: '20px',
+      fontWeight: 800,
+      color: '#DFF6FF',
+    },
+    serviceCoverageContainer: {
+      background: '#EEEEEE',
+      marginBottom: '35px',
+      paddingTop: '44px',
+      paddingRight: '16px',
+      paddingBottom: '36px',
+      fontStyle: 'normal',
+      fontWeight: 400,
+      fontSize: '16px',
+      lineHeight: '20px',
+      color: '#06283D',
+    },
+    servicesImage: {
+      width: '280px',
+      height: '236px',
+    },
+    imageContainer: {
+      marginTop: '36px',
+      width: '100%',
+      textAlign: 'center',
+    },
+    quoteText: {
+      fontStyle: 'normal',
+      fontWeight: 800,
+      fontSize: '20px',
+      lineHeight: '30px',
+      color: '#4C81C7',
+    },
+    quoteContainer: {
+      textAlign: 'center',
+    },
+    listContainer: {
+      marginRight: '16px',
+      marginLeft: '16px',
+      marginTop: '30px',
+      marginBottom: '35px',
+      background: 'rgba(238, 238, 238, 0.8)',
+      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)',
+      borderRadius: '20px',
+      paddingTop: '28px',
+      paddingRight: '16px',
+      paddingBottom: '28px',
+      fontStyle: 'normal',
+      fontWeight: 400,
+      fontSize: '16px',
+      lineHeight: '20px',
+      color: '#06283D'
+    }
+  };
+  const cardContents = [
+    {
+      cardLabel: 'Administration & Support',
+      cardContent: 
+      <>
+        <li>Customer Support Representative</li>
+        <li>Data Encoder</li>
+        <li>Legal Assistant</li>
+        <li>Technical Support Staff</li>
+        <li>Virtual Assistants</li>
+        <li>Recruitment Assistants</li>
+      </>,
+      cardContainerStyle: styles.cardContainerStyle,
+      cardLabelStyle: styles.cardLabelStyle,
+      cardContentStyle: styles.cardContentStyle,
+      buttonWrapperStyle: styles.buttonWrapper,
+      buttonStyle: styles.getStartedButtonSx,
+      buttonTextStyle: styles.getStartedTextSx,
+    },
+    {
+      cardLabel: 'Finance & Accounting',
+      cardContent: 
+      <>
+        <li>Bookkeepers</li>
+        <li>Accounts Payable Specialist</li>
+        <li>Payroll Specialist</li>
+        <li>Credit & Collections Experts</li>
+        <li>Accountants</li>
+      </>,
+      cardContainerStyle: styles.cardContainerStyle,
+      cardLabelStyle: styles.cardLabelStyle,
+      cardContentStyle: styles.cardContentStyle,
+      buttonWrapperStyle: styles.buttonWrapper,
+      buttonStyle: styles.getStartedButtonSx,
+      buttonTextStyle: styles.getStartedTextSx,
+    },
+    {
+      cardLabel: 'Sales & Marketing',
+      cardContent:
+      <>
+        <li>Graphic Designers</li>
+        <li>Lead Generation Experts</li>
+        <li>Marketing Assistants</li>
+        <li>Social Media Managers</li>
+        <li>Social Media Influencer Coordinators</li>
+        <li>Bloggers & Copywriters</li>
+        <li>SEO Specialists</li>
+        <li>Telemarketers</li>
+      </>,
+      cardContainerStyle: styles.cardContainerStyle,
+      cardLabelStyle: styles.cardLabelStyle,
+      cardContentStyle: styles.cardContentStyle,
+      buttonWrapperStyle: styles.buttonWrapper,
+      buttonStyle: styles.getStartedButtonSx,
+      buttonTextStyle: styles.getStartedTextSx,
+    },
+    {
+      cardLabel: 'Web Developers & Programmers',
+      cardContent:
+      <>
+        <li>PHP Developers</li>
+        <li>Project managers</li>
+        <li>Quality Assurance Specialists</li>
+        <li>System Administrators</li>
+        <li>Web Designers</li>
+        <li>Software Developers</li>
+        <li>Software Testers</li>
+      </>,
+      cardContainerStyle: styles.cardContainerStyle,
+      cardLabelStyle: styles.cardLabelStyle,
+      cardContentStyle: styles.cardContentStyle,
+      buttonWrapperStyle: styles.buttonWrapper,
+      buttonStyle: styles.getStartedButtonSx,
+      buttonTextStyle: styles.getStartedTextSx,
+    },
+    {
+      cardLabel: 'Real Property',
+      cardContent:
+      <>
+        <li>Appointment Setter</li>
+      </>,
+      cardContainerStyle: {...styles.cardContainerStyle, marginBottom: '78px'} ,
+      cardLabelStyle: styles.cardLabelStyle,
+      cardContentStyle: styles.cardContentStyle,
+      buttonWrapperStyle: styles.buttonWrapper,
+      buttonStyle: styles.getStartedButtonSx,
+      buttonTextStyle: styles.getStartedTextSx,
+    },
+  ];
+  return (
+    <>
+      <Box sx={styles.headerContainer}>
+        <span style={styles.ourText}>Our</span>
+        <span style={{...styles.ourText, ...styles.servicesText}}> Services.</span>
+      </Box>
+      {cardContents.map((cardContent) => {
+        return (
+          <Card 
+            cardLabel = {cardContent.cardLabel}
+            cardContent = {cardContent.cardContent}
+            cardContainerStyle = {cardContent.cardContainerStyle}
+            cardLabelStyle = {cardContent.cardLabelStyle}
+            cardContentStyle = {cardContent.cardContentStyle}
+            page = {Pages.SERVICES}
+            buttonLabel = 'Hire Stafff'
+            buttonWrapperStyle = {cardContent.buttonWrapperStyle}
+            buttonStyle = {cardContent.buttonStyle}
+            buttonLabelStyle = {cardContent.buttonTextStyle}
+            />
+        )
+      })}
+      <Box sx={styles.serviceCoverageLabelContainer}>
+        <span style={styles.serviceCoverageLabel}>
+          Service Coverage
+        </span>
+      </Box>
+      <Box sx={styles.serviceCoverageContainer}>
+        <ul style={{margin: '0px'}}>
+          <li>Recruitment Services (Sourcing & Talent Acquisition)</li>
+          <li>Attendance Tracking System</li>
+          <li>Payroll Services</li>
+          <li>Benefits Administration</li>
+          <li>Remote Work Monitoring Tool</li>
+          <li>Screenshot Checks</li>
+          <li>Administrative Support</li>
+          <li>Technical Support</li>
+          <li>Engagement Activities & Retention Programs</li>
+          <li>Client Services - Dedicated Account Manager to support you</li>
+        </ul>
+        <Box sx={styles.imageContainer}>
+          <img src={process.env.PUBLIC_URL + '/assets/servicesImage.png'} alt='Services' style={styles.servicesImage}></img>
+        </Box>
+      </Box>
+      <Box sx={styles.quoteContainer}>
+        <span style={styles.quoteText}>Our Tools and Systems to help you manage your staff remotely</span>
+      </Box>
+      <Box sx={styles.listContainer}>
+        <ul style={{margin: '0px'}}>
+          <li>Website and Applications Tracking</li>
+          <li>Time tracking and reporting</li>
+          <li>Screenshot reports</li>
+          <li>Productivity Reports</li>
+          <li>Internet Connectivity Report</li>
+        </ul>
+      </Box>
+    </>
+  );
+}
+
+export default Services;
