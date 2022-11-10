@@ -1,6 +1,4 @@
 import { Box, Button, Typography } from '@mui/material';
-import React from 'react';
-import { theme } from '..';
 
 //@ts-ignore
 function Home(props) {
@@ -10,14 +8,11 @@ function Home(props) {
       height: '360px',
       backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/HomeBackground.png'})`,
       backgroundSize: 'cover',
-      backgroundPosition: '-240px',
+      backgroundPosition: 'center',
       paddingTop: '53px',
       paddingLeft: '16px',
       paddingRight: '16px',
       marginBottom: '56px',
-      [theme.breakpoints.up('sm')]: {
-        backgroundPosition: '0px',
-      },
     },
     heading1: {
       color: 'white',
