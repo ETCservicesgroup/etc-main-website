@@ -88,7 +88,7 @@ function Header(props: IHeaderProps) {
         }}
         transformOrigin={{
           vertical: 'top',
-          horizontal: 'right',
+          horizontal: 'left',
         }}
         keepMounted
         onClose={handleClose}
