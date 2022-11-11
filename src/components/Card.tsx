@@ -41,7 +41,7 @@ const Card = (props: ICardProps) => {
     case Pages.HOW_IT_WORKS:
       return (
         <Box sx={cardContainerStyle}>
-          <img src={process.env.PUBLIC_URL + iconUrl} alt={iconAlt} style={iconStyle}></img>
+          <Box component='img' src={process.env.PUBLIC_URL + iconUrl} alt={iconAlt} sx={iconStyle}></Box>
             <Box sx={contentContainerStyle}>
               <span style={cardLabelStyle}>{cardLabel}</span>
               <p style={cardContentStyle}>{cardContent}</p>
@@ -51,9 +51,11 @@ const Card = (props: ICardProps) => {
     case Pages.WHY_US:
       return (
         <Box sx={cardContainerStyle}>
-          <img src={process.env.PUBLIC_URL + iconUrl} alt={iconAlt} style={iconStyle}></img>
-          <span style={cardLabelStyle}>{cardLabel}</span>
-          <p style={cardContentStyle}>{cardContent}</p>
+          <Box component='img' src={process.env.PUBLIC_URL + iconUrl} alt={iconAlt} sx={iconStyle}></Box>
+            <Box sx={contentContainerStyle}>
+              <span style={cardLabelStyle}>{cardLabel}</span>
+              <p style={cardContentStyle}>{cardContent}</p>
+            </Box>
         </Box>
       );
       case Pages.SERVICES:

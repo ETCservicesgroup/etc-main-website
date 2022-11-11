@@ -1,4 +1,5 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import { theme } from "..";
 import { Pages } from "../types/types";
 import Card from "./Card";
 
@@ -6,12 +7,14 @@ const WhyUs = () => {
   const styles = {
     headingContainer: {
       width: '100vw',
-      height: '415px',
       backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/WhyUsHeader.jpg'})`,
       backgroundSize: 'cover',
       paddingTop: '49px',
       paddingBottom: '49px',
       marginBottom: '57px',
+      [theme.breakpoints.up('md')]: {
+        marginBottom: '90px',
+      },
     },
     headerTextContainer: {
       background: 'rgba(6, 40, 61, 0.7)',
@@ -21,30 +24,54 @@ const WhyUs = () => {
       paddingRight: '16px',
       paddingLeft: '16px',
       paddingTop: '27px',
+      maxWidth: '595px',
+      [theme.breakpoints.up('md')]: {
+        height: '519px',
+        paddingRight: '46px',
+        paddingLeft: '46px',
+        paddingTop: '42px',
+      },
     },
     whyText:{
       fontSize: '40px',
       lineHeight: '45px',
       fontWeight: 700,
       color: '#DFF6FF',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '60px',
+        lineHeight: '75px',
+      },
     },
     etcText:{
       fontSize: '60px',
       lineHeight: '60px',
       fontWeight: 700,
       color: '#47B5FF',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '90px',
+        lineHeight: '90px',
+      },
     },
     servicesText:{
       fontSize: '60px',
       lineHeight: '60px',
       fontWeight: 700,
       color: '#47B5FF',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '90px',
+        lineHeight: '90px',
+      },
     },
     headerContentText:{
       fontSize: '14px',
       lineHeight: '25px',
       fontWeight: 400,
       color: '#DFF6FF',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '20px',
+        lineHeight: '30px',
+        fontWeight: 300,
+      },
     },
     buttonWrapper: {
       textAlign: 'center',
@@ -52,6 +79,9 @@ const WhyUs = () => {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'flex-end',
+      [theme.breakpoints.up('md')]: {
+        display: 'block',
+      },
     },
     getStartedButtonSx: {
       background: 'rgba(76, 129, 199, 0.8)',
@@ -62,10 +92,19 @@ const WhyUs = () => {
       height: '41px',
       margin: '0 auto',
       transform: 'translateY(22px)',
+      [theme.breakpoints.up('md')]: {
+        transform: 'translateY(0px)',
+        width: '180px',
+        height: '50px',
+        marginTop: '20px',
+      },
     },
     getStartedTextSx: {
       fontWeight: 700,
       fontSize: '20px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '23px',
+      },
     },
     whatWeOfferContainer: {
       borderTop: '2px solid #EEEEEE',
@@ -76,6 +115,12 @@ const WhyUs = () => {
       flexWrap: 'wrap',
       justifyContent: 'space-around',
       marginBottom: '19px',
+      [theme.breakpoints.up('md')]: {
+        paddingTop: '90px',
+        paddingLeft: '40px',
+        paddingRight: '40px',
+        marginBottom: '40px',
+      },
     },
     whatWeOfferLabelContainer: {
       position: 'absolute',
@@ -87,11 +132,19 @@ const WhyUs = () => {
       height: '44px',
       transform: 'translate(-20px, -22px)',
       paddingRight: '40px',
+      [theme.breakpoints.up('md')]: {
+        width: '373px',
+        height: '60px',
+        transform: 'translate(-34px, -30px)',
+      },
     },
     whatWeOfferLabelText: {
       fontSize: '20px',
       fontWeight: 800,
       color: '#DFF6FF',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '30px',
+      },
     },
     cardContainerStyle: {
       background: 'rgba(238, 238, 238, 0.8)',
@@ -103,11 +156,25 @@ const WhyUs = () => {
       padding: '12px 10px',
       width: '169px',
       marginBottom: '20px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '30px',
+        width: '100vw',
+        flexDirection: 'row',
+        textAlign: 'left',
+        padding: '12px 28px',
+        alignItems: 'center',
+      },
     },
     iconStyle: {
       width: '50px',
       height: '50px',
       margin: '0 auto',
+      [theme.breakpoints.up('md')]: {
+        width: '60px',
+        height: '60px',
+        margin: '0',
+        marginRight: '23px',
+      },
 
     },
     cardLabelStyle: {
@@ -129,6 +196,15 @@ const WhyUs = () => {
     whyUsImage: {
       marginBottom: '39px',
       width: '100vw',
+      maxWidth: '563px',
+      [theme.breakpoints.up('md')]: {
+        marginBottom: '60px',
+      },
+    },
+    imageContainer: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
     }
   }
 
@@ -208,24 +284,24 @@ const WhyUs = () => {
     <>
       <Box sx={styles.headingContainer}>
         <Box sx={styles.headerTextContainer}>
-          <span style={styles.whyText}>Why</span>
-          <span style={styles.etcText}>ETC</span>
-          <span style={styles.servicesText}>SERVICES</span>
-          <span style={styles.headerContentText}>We provide businesses with quality remote staff that matches your requirements and achieves scalable growth for your organization.</span>
+          <Typography component='span' sx={styles.whyText}>Why</Typography>
+          <Typography component='span' sx={styles.etcText}>ETC</Typography>
+          <Typography component='span' sx={styles.servicesText}>SERVICES</Typography>
+          <Typography component='span' sx={styles.headerContentText}>We provide businesses with quality remote staff that matches your requirements and achieves scalable growth for your organization.</Typography>
           <Box sx={styles.buttonWrapper}>
             <Button variant='contained' sx={styles.getStartedButtonSx}>
-              <span style={styles.getStartedTextSx}>
+              <Typography component='span' sx={styles.getStartedTextSx}>
                 Get Started
-              </span>
+              </Typography>
             </Button>
           </Box>
         </Box>
       </Box>
 
       <Box sx={styles.whatWeOfferLabelContainer}>
-        <span style={styles.whatWeOfferLabelText}>
+        <Typography component='span' sx={styles.whatWeOfferLabelText}>
           What we Offer
-        </span>
+        </Typography>
       </Box>
       <Box sx={styles.whatWeOfferContainer}>
         {cardContents.map((cardContent) => {
@@ -244,7 +320,9 @@ const WhyUs = () => {
           )
         })}
       </Box>
-      <img src={process.env.PUBLIC_URL + '/assets/GroupOfPeople.png'} alt="Group of people" style={styles.whyUsImage}></img>
+      <Box sx={styles.imageContainer}>
+        <Box component='img' src={process.env.PUBLIC_URL + '/assets/GroupOfPeople.png'} alt="Group of people" sx={styles.whyUsImage}></Box>
+      </Box>
     </>
   );
 };
