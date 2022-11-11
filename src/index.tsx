@@ -13,20 +13,10 @@ export const theme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
-      sm: 391,
-      md: 1081,
-      lg: 1441,
-      xl: 1536,
-    },
-  },
-  typography: {
-    h3: {
-      fontWeight: 700,
-      fontSize: '40px',
-    },
-    h2: {
-      fontWeight: 700,
-      fontSize: '70px',
+      sm: 390,
+      md: 768,
+      lg: 1080,
+      xl: 1440,
     },
   }
 });
