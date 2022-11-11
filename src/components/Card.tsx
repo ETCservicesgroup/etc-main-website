@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { ReactNode } from "react";
 import { Pages } from "../types/types";
 
@@ -43,8 +43,8 @@ const Card = (props: ICardProps) => {
         <Box sx={cardContainerStyle}>
           <Box component='img' src={process.env.PUBLIC_URL + iconUrl} alt={iconAlt} sx={iconStyle}></Box>
             <Box sx={contentContainerStyle}>
-              <span style={cardLabelStyle}>{cardLabel}</span>
-              <p style={cardContentStyle}>{cardContent}</p>
+              <Typography component='span' sx={cardLabelStyle}>{cardLabel}</Typography>
+              <Typography component='p' sx={cardContentStyle}>{cardContent}</Typography>
             </Box>
         </Box>
       );
@@ -53,23 +53,23 @@ const Card = (props: ICardProps) => {
         <Box sx={cardContainerStyle}>
           <Box component='img' src={process.env.PUBLIC_URL + iconUrl} alt={iconAlt} sx={iconStyle}></Box>
             <Box sx={contentContainerStyle}>
-              <span style={cardLabelStyle}>{cardLabel}</span>
-              <p style={cardContentStyle}>{cardContent}</p>
+              <Typography component='span' sx={cardLabelStyle}>{cardLabel}</Typography>
+              <Typography component='p' sx={cardContentStyle}>{cardContent}</Typography>
             </Box>
         </Box>
       );
       case Pages.SERVICES:
         return (
           <Box sx={cardContainerStyle}>
-            <span style={cardLabelStyle}>{cardLabel}</span>
+            <Typography component='span' sx={cardLabelStyle}>{cardLabel}</Typography>
             <ul style={cardContentStyle}>
               {cardContent}
             </ul>
             <Box sx={buttonWrapperStyle}>
               <Button variant='contained' sx={buttonStyle}>
-                <span style={buttonLabelStyle}>
+                <Typography component='span' sx={buttonLabelStyle}>
                   {buttonLabel}
-                </span>
+                </Typography>
               </Button>
             </Box>
           </Box>

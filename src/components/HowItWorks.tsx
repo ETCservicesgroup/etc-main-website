@@ -1,4 +1,5 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import { theme } from "..";
 import { Pages } from "../types/types";
 import Card from "./Card";
 
@@ -13,6 +14,12 @@ const HowItWorks = () => {
       paddingTop: '30px',
       marginBottom: '35px',
       backgroundPosition: 'center',
+      [theme.breakpoints.up('md')]: {
+        height: '150px',
+        paddingLeft: '32px',
+        paddingTop: '37px',
+        marginBottom: '60px',
+      },
     },
     howText: {
       fontStyle: 'normal',
@@ -20,6 +27,9 @@ const HowItWorks = () => {
       fontSize: '40px',
       lineHeight: '75px',
       color: '#47B5FF',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '60px',
+      },
     },
     workText: {
       fontStyle: 'normal',
@@ -27,20 +37,29 @@ const HowItWorks = () => {
       fontSize: '40px',
       lineHeight: '75px',
       color: '#DFF6FF',
-    },
-    howItWorksContainer: {
+      [theme.breakpoints.up('md')]: {
+        fontSize: '60px',
+      },
     },
     cardContainerStyle1: {
       background: 'rgba(238, 238, 238, 0.8)',
       display: 'flex',
       padding: '16px',
-      justifyContent: 'space-evenly'
+      justifyContent: 'space-evenly',
+      alignItems: 'center',
+      [theme.breakpoints.up('md')]: {
+        padding: '0px 50px',
+      },
     },
     cardContainerStyle2: {
       display: 'flex',
       flexDirection: 'row-reverse',
       padding: '16px',
-      justifyContent: 'space-evenly'
+      justifyContent: 'space-evenly',
+      alignItems: 'center',
+      [theme.breakpoints.up('md')]: {
+        padding: '0px 50px',
+      },
     },
     iconStyle: {
       width: '185px',
@@ -53,6 +72,9 @@ const HowItWorks = () => {
       fontSize: '20px',
       lineHeight: '25px',
       color: '#4C81C7',
+      [theme.breakpoints.up('md')]: {
+        lineHeight: '30px',
+      },
     },
     cardContentStyle: {
       textAlign: 'left',
@@ -61,7 +83,12 @@ const HowItWorks = () => {
       fontSize: '14px',
       lineHeight: '20px',
       color: '#06283D',
-      marginTop: '0px',
+      marginTop: '4px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '16px',
+        lineHeight: '25px',
+        marginTop: '10px',
+      },
     },
     workWithUsContainer: {
       backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/WorkWithUs.png'})`,
@@ -69,9 +96,15 @@ const HowItWorks = () => {
       marginBottom: '35px',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      paddingTop: '32px',
-      paddingBottom: '32px',
       textAlign: 'center',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      [theme.breakpoints.up('md')]: {
+        marginTop: '60px',
+        height: '300px',
+        marginBottom: '60px',
+      },
     },
     getStartedButtonSx: {
       background: 'rgba(76, 129, 199, 0.8)',
@@ -81,6 +114,10 @@ const HowItWorks = () => {
       width: '151px',
       height: '41px',
       margin: '0 auto',
+      [theme.breakpoints.up('md')]: {
+        width: '180px',
+        height: '50px',
+      },
     },
     workWithUsText: {
       fontStyle: 'normal',
@@ -89,6 +126,10 @@ const HowItWorks = () => {
       lineHeight: '75px',
       color: '#DFF6FF',
       marginBottom: '10px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '60px',
+        marginBottom: '58px',
+      },
     },
     buttonWrapper: {
       textAlign: 'center',
@@ -96,6 +137,9 @@ const HowItWorks = () => {
     getStartedTextSx: {
       fontWeight: 700,
       fontSize: '20px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '23px',
+      },
     },
   };
 
@@ -165,11 +209,11 @@ const HowItWorks = () => {
     <>
       <Box sx={styles.headingContainer}>
         <Box>
-          <span style={styles.howText}>How it</span>
-          <span style={styles.workText}> Works.</span>
+          <Typography component='span' sx={styles.howText}>How it</Typography>
+          <Typography component='span' sx={styles.workText}> Works.</Typography>
         </Box>
       </Box>
-      <Box sx={styles.howItWorksContainer}>
+      <Box>
         {cardContents.map((cardContent) => {
           return (
             <Card 
@@ -187,12 +231,12 @@ const HowItWorks = () => {
         })}
       </Box>
       <Box sx={styles.workWithUsContainer}>
-        <span style={styles.workWithUsText}>Work with Us</span>
+        <Typography component='span' sx={styles.workWithUsText}>Work with Us</Typography>
         <Box sx={styles.buttonWrapper}>
           <Button variant='contained' sx={styles.getStartedButtonSx}>
-            <span style={styles.getStartedTextSx}>
+            <Typography component='span' sx={styles.getStartedTextSx}>
               Get Started
-            </span>
+            </Typography>
           </Button>
         </Box>
       </Box>
