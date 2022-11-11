@@ -245,7 +245,7 @@ function Services() {
               cardLabelStyle = {cardContent.cardLabelStyle}
               cardContentStyle = {cardContent.cardContentStyle}
               page = {Pages.SERVICES}
-              buttonLabel = 'Hire Stafff'
+              buttonLabel = 'Hire Staff'
               buttonWrapperStyle = {cardContent.buttonWrapperStyle}
               buttonStyle = {cardContent.buttonStyle}
               buttonLabelStyle = {cardContent.buttonTextStyle}
