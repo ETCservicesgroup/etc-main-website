@@ -2,6 +2,7 @@ import { Box, IconButton, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React from 'react';
 import { Pages } from '../types/types';
+import { theme } from '..';
 
 
 interface IHeaderProps {
@@ -23,16 +24,30 @@ function Header(props: IHeaderProps) {
       paddingRight: '30px',
       paddingLeft: '16px',
       backgroundColor: 'white',
+      [theme.breakpoints.up('md')]: {
+        height: '100px',
+      },
     },
     menuIcon: {
       color: '#4C81C7',
       fontSize: '35px',
       marginTop: '7.5px',
       marginBottom: '7.5px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '50px',
+      },
     },
     headerLogo: {
+      width: '100%',
+      height: '100%',
+    },
+    logoContainer: {
       width: '135px',
       height: '50px',
+      [theme.breakpoints.up('md')]: {
+        height: '80px',
+        width: '220px',
+      },
     },
     hamburgerMenu: {
       "& .MuiMenu-paper": { 
@@ -44,7 +59,9 @@ function Header(props: IHeaderProps) {
         paddingLeft: '0px',
         marginRight: '16px',
         marginLeft: '16px',
-        borderBottom: '1px solid rgba(238, 238, 238, 0.5);'
+        borderBottom: '1px solid rgba(238, 238, 238, 0.5);',
+        paddingTop: '20px',
+        paddingBottom: '20px',
       },
       "& .MuiList-root": { 
         paddingTop: '13px',
@@ -52,13 +69,16 @@ function Header(props: IHeaderProps) {
       },
 
     },
-    menuItemLabel: {
+    menuItemLabelWrapper: {
       color: '#DFF6FF',
       fontStyle: 'normal',
       fontWeight: 700,
       fontSize: '16px',
       lineHeight: '21px',
-    }
+      [theme.breakpoints.up('md')]: {
+        fontSize: '20px',
+      },
+    },
   }
 
   const [menuAnchorEl, setMenuAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -71,7 +91,9 @@ function Header(props: IHeaderProps) {
   return (
     <>
     <Box sx={styles.headerContainer}>
-      <img src={process.env.PUBLIC_URL + '/assets/Logo.png'} alt="ETC Services Logo" style={styles.headerLogo}></img>
+      <Box sx={styles.logoContainer}>
+        <img src={process.env.PUBLIC_URL + '/assets/Logo.png'} alt="ETC Services Logo" style={styles.headerLogo}></img>
+      </Box>
       <IconButton onClick={((e) => {
         setMenuAnchorEl(e.currentTarget.parentElement);
       })}>
@@ -112,7 +134,9 @@ function Header(props: IHeaderProps) {
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
           }}
         >
-          <span style={styles.menuItemLabel}>Home</span>
+          <Box sx={styles.menuItemLabelWrapper}>
+            <span>Home</span>
+          </Box>
         </MenuItem>
         <MenuItem
           onFocus={(e) => {
@@ -125,7 +149,9 @@ function Header(props: IHeaderProps) {
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
           }}
         >
-          <span style={styles.menuItemLabel}>Services</span>
+          <Box sx={styles.menuItemLabelWrapper}>
+            <span>Services</span>
+          </Box>
         </MenuItem>
         <MenuItem
           onFocus={(e) => {
@@ -138,7 +164,9 @@ function Header(props: IHeaderProps) {
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
           }}
         >
-          <span style={styles.menuItemLabel}>Why Us</span>
+          <Box sx={styles.menuItemLabelWrapper}>
+            <span>Why Us</span>
+          </Box>
         </MenuItem>
         <MenuItem
           onFocus={(e) => {
@@ -151,7 +179,9 @@ function Header(props: IHeaderProps) {
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
           }}
         >
-          <span style={styles.menuItemLabel}>How it Works</span>
+          <Box sx={styles.menuItemLabelWrapper}>
+            <span>How it Works</span>
+          </Box>
         </MenuItem>
         <MenuItem
           onFocus={(e) => {
@@ -164,7 +194,9 @@ function Header(props: IHeaderProps) {
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
           }}
         >
-          <span style={styles.menuItemLabel}>FAQ</span>
+          <Box sx={styles.menuItemLabelWrapper}>
+            <span>FAQ</span>
+          </Box>
         </MenuItem>
         <MenuItem
           onFocus={(e) => {
@@ -177,7 +209,9 @@ function Header(props: IHeaderProps) {
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
           }}
         >
-          <span style={styles.menuItemLabel}>Contact Us</span>
+          <Box sx={styles.menuItemLabelWrapper}>
+            <span>Contact Us</span>
+          </Box>
         </MenuItem>
       </Menu>
     </Box>
