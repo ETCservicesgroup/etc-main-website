@@ -1,8 +1,9 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import EmailIcon from '@mui/icons-material/Email';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { theme } from "..";
 
 
 //@ts-ignore
@@ -16,12 +17,20 @@ function Footer(props) {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
+      [theme.breakpoints.up('md')]: {
+        paddingTop: '25px',
+        paddingBottom: '23px',
+        height: '223px',
+      },
     },
     footerText: {
       textAlign: 'center',
       fontSize: '10px',
       color: '#DFF6FF',
       fontWeight: 400,
+      [theme.breakpoints.up('md')]: {
+        fontSize: '14px',
+      },
     },
     footerLinksAndLogoContainer: {
       display: 'flex',
@@ -44,6 +53,9 @@ function Footer(props) {
       fontWeight: 500,
       color: '#DFF6FF',
       paddingBottom: '10px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '16px',
+      },
     },
     contactEmailText: {
       fontSize: '12px',
@@ -51,19 +63,32 @@ function Footer(props) {
       fontWeight: 500,
       verticalAlign: 'top',
       paddingLeft: '8px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '14px',
+      },
     },
     emailIcon: {
       color: '#DFF6FF',
       fontSize: '20px',
       verticalAlign: 'top',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '25px',
+      },
     },
     icon: {
       fontSize: '20px',
-      marginRight: '30px',
+      marginRight: '25px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '30px',
+      },
     },
     footerLogo: {
       width: '126px',
       height: '45px',
+      [theme.breakpoints.up('md')]: {
+        width: '220px',
+        height: '78px',
+      },
     }
   }
 
@@ -71,14 +96,14 @@ function Footer(props) {
     <Box sx={styles.footerContainer}>
       <Box sx={styles.footerLinksAndLogoContainer}>
         <Box sx={styles.footerLogoContainer}>
-          <img src={process.env.PUBLIC_URL + '/assets/Logo.png'} alt="ETC Services Logo" style={styles.footerLogo}></img>
+          <Box component='img' src={process.env.PUBLIC_URL + '/assets/Logo.png'} alt="ETC Services Logo" sx={styles.footerLogo}></Box>
         </Box>
         <Box sx={styles.footerLinksContainer}>
-          <a style={styles.footerLinks}>Services</a>
-          <a style={styles.footerLinks}>Contact Us</a>
+          <Typography component='a' sx={styles.footerLinks}>Services</Typography>
+          <Typography component='a' sx={styles.footerLinks}>Contact Us</Typography>
           <Box>
             <EmailIcon sx={styles.emailIcon}/>
-            <span style={styles.contactEmailText}>info@etcservices.com</span>
+            <Typography component='a' sx={styles.contactEmailText}>info@etcservices.com</Typography>
           </Box>
           <Box sx={styles.footerIconsContainer}>
             <FacebookIcon sx={styles.icon}/>
