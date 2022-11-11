@@ -1,25 +1,47 @@
 import { Box, Button, Typography } from '@mui/material';
+import { theme } from '..';
 
 //@ts-ignore
 function Home(props) {
   const styles = {
-    imageStyle: {
+    homeHeader: {
       width: '100vw',
+      maxWidth: '500px',
       height: '360px',
-      backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/HomeBackground.png'})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
       paddingTop: '53px',
       paddingLeft: '16px',
       paddingRight: '16px',
-      marginBottom: '56px',
+      [theme.breakpoints.up('md')]: {
+        height: '520px',
+        paddingTop: '74px',
+        paddingLeft: '32px',
+        paddingRight: '32px',
+      },
     },
     heading1: {
       color: 'white',
+      fontWeight: 700,
+      fontSize: '40px',
+      lineHeight: '45px',
+      marginBottom: '10px',
+      display: 'block',
+      [theme.breakpoints.up('md')]: {
+        lineHeight: '75px',
+        fontSize: '60px',
+      },
     },
     heading2: {
       color: '#47B5FF',
+      fontWeight: 700,
+      fontSize: '70px',
+      lineHeight: '75px',
       marginBottom: '46px',
+      display: 'block',
+      [theme.breakpoints.up('md')]: {
+        lineHeight: '75px',
+        fontSize: '90px',
+        marginBottom: '85px',
+      },
     },
     getStartedButtonSx: {
       background: 'rgba(76, 129, 199, 0.8)',
@@ -28,11 +50,18 @@ function Home(props) {
       textTransform: 'none',
       width: '151px',
       height: '41px',
+      [theme.breakpoints.up('md')]: {
+        width: '180px',
+        height: '50px',
+      },
       margin: '0 auto',
     },
     getStartedTextSx: {
       fontWeight: 700,
       fontSize: '20px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '23px',
+      },
     },
     buttonWrapper: {
       textAlign: 'center',
@@ -41,6 +70,9 @@ function Home(props) {
       fontSize: '20px',
       fontWeight: 800,
       color: '#DFF6FF',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '30px',
+      },
     },
     aboutUsLabelContainer: {
       position: 'absolute',
@@ -52,12 +84,22 @@ function Home(props) {
       height: '44px',
       transform: 'translate(-20px, -22px)',
       paddingRight: '40px',
+      [theme.breakpoints.up('md')]: {
+        width: '498px',
+        height: '60px',
+        transform: 'translate(-197px, -30px)',
+        fontSize: '30px',
+        paddingRight: '59px',
+      },
     },
     aboutUsContent: {
       fontSize: '16px',
       fontWeight: 400,
       lineHeight: '28px',
       color: '#06283D',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '20px',
+      },
     },
     aboutUsContainer: {
       paddingTop: '43px',
@@ -66,6 +108,13 @@ function Home(props) {
       paddingBottom: '13px',
       background: '#EEEEEE',
       marginBottom: '35px',
+      [theme.breakpoints.up('md')]: {
+        paddingRight: '33px',
+        paddingLeft: '33px',
+        paddingBottom: '28px',
+        paddingTop: '66px',
+        marginBottom: '60px',
+      },
     },
     companyText: {
       color: '#4C81C7',
@@ -73,27 +122,38 @@ function Home(props) {
     },
     aboutUsParagraph: {
       marginTop: '0px',
-    }
+    },
+    imageBackgroundWrapper: {
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/HomeBackground.png'})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      marginBottom: '56px',
+      [theme.breakpoints.up('md')]: {
+        marginBottom: '90px',
+      },
+    },
   }
 
   return (
     <>
-      <Box sx={styles.imageStyle}>
-        <Typography variant='h3' sx={styles.heading1}>Your partner towards</Typography>
-        <Typography variant='h2' sx={styles.heading2}>GROWTH</Typography>
-        <Box sx={styles.buttonWrapper}>
-          <Button variant='contained' sx={styles.getStartedButtonSx}>
-            <span style={styles.getStartedTextSx}>
-              Get Started
-            </span>
-          </Button>
+      <Box sx={styles.imageBackgroundWrapper}>
+        <Box sx={styles.homeHeader}>
+          <Typography component='span' sx={styles.heading1}>Your partner towards</Typography>
+          <Typography component='span' sx={styles.heading2}>GROWTH</Typography>
+          <Box sx={styles.buttonWrapper}>
+            <Button variant='contained' sx={styles.getStartedButtonSx}>
+              <Typography component='span' sx={styles.getStartedTextSx}>
+                Get Started
+              </Typography>
+            </Button>
+          </Box>
         </Box>
       </Box>
 
       <Box sx={styles.aboutUsLabelContainer}>
-        <span style={styles.aboutUsLabel}>
+        <Typography component='span' sx={styles.aboutUsLabel}>
           About Us
-        </span>
+        </Typography>
       </Box>
       
       <Box sx={styles.aboutUsContainer}>
