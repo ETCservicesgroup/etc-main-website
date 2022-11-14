@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ContactUs from "./components/ContactUs";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -16,6 +17,7 @@ function App() {
       {visiblePage === Pages.WHY_US ? <WhyUs /> : ''}
       {visiblePage === Pages.HOW_IT_WORKS ? <HowItWorks /> : ''}
       {visiblePage === Pages.SERVICES ? <Services /> : ''}
+      {visiblePage === Pages.CONTACT_US ? <ContactUs /> : ''}
       <Footer />
     </>
   );
