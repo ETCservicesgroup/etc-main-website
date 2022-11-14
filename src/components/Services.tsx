@@ -1,4 +1,5 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import { theme } from "..";
 import { Pages } from "../types/types";
 import Card from "./Card";
 
@@ -11,6 +12,11 @@ function Services() {
       backgroundSize: 'cover',
       padding: '30px 16px',
       marginBottom: '35px',
+      [theme.breakpoints.up('md')]: {
+        height: '150px',
+        padding: '37px 32px',
+        marginBottom: '58px',
+      },
     },
     ourText: {
       fontStyle: 'normal',
@@ -18,6 +24,9 @@ function Services() {
       fontSize: '40px',
       lineHeight: '75px',
       color: '#47B5FF',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '60px',
+      },
     },
     servicesText: {
       color: '#DFF6FF',
@@ -30,6 +39,14 @@ function Services() {
       textAlign: 'center',
       maxWidth: '390px',
       width: '100vw',
+      [theme.breakpoints.up('md')]: {
+        boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)',
+        borderRadius: '20px',
+        width: '238px',
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '365px',
+      },
     },
     cardLabelStyle: {
       fontStyle: 'normal',
@@ -46,6 +63,10 @@ function Services() {
       lineHeight: '20px',
       color: '#06283D',
       textAlign: 'left',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '15px',
+        lineHeight: '30px',
+      },
     },
     getStartedButtonSx: {
       background: '#4C81C7',
@@ -54,6 +75,11 @@ function Services() {
       width: '169px',
       height: '41px',
       margin: '0 auto',
+      [theme.breakpoints.up('md')]: {
+        width: '100%',
+        borderRadius: '0px 0px 20px 20px',
+        height: '53px',
+      },
     },
     getStartedTextSx: {
       fontWeight: 500,
@@ -63,6 +89,12 @@ function Services() {
     buttonWrapper: {
       textAlign: 'center',
       transform: 'translateY(22px)',
+      [theme.breakpoints.up('md')]: {
+        transform: 'translateY(0px)',
+        display: 'flex',
+        flexGrow: '1',
+        alignItems: 'flex-end',
+      },
     },
     serviceCoverageLabelContainer: {
       position: 'absolute',
@@ -74,11 +106,20 @@ function Services() {
       height: '44px',
       transform: 'translate(-20px, -22px)',
       paddingRight: '20px',
+      [theme.breakpoints.up('md')]: {
+        height: '60px',
+        width: '432px',
+        transform: 'translate(-40px, -30px)',
+        paddingRight: '60px',
+      },
     },
     serviceCoverageLabel: {
       fontSize: '20px',
       fontWeight: 800,
       color: '#DFF6FF',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '30px',
+      },
     },
     serviceCoverageContainer: {
       background: '#EEEEEE',
@@ -91,6 +132,14 @@ function Services() {
       fontSize: '16px',
       lineHeight: '20px',
       color: '#06283D',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '20px',
+        lineHeight: '40px',
+        padding: '58px',
+        display: 'flex',
+        alignItems: 'center',
+        marginBottom: '59px',
+      },
     },
     servicesImage: {
       width: '280px',
@@ -100,6 +149,11 @@ function Services() {
       marginTop: '36px',
       width: '100%',
       textAlign: 'center',
+      [theme.breakpoints.up('md')]: {
+        width: '272px',
+        height: '231px',
+        marginTop: '0px',
+      },
     },
     quoteText: {
       fontStyle: 'normal',
@@ -107,6 +161,10 @@ function Services() {
       fontSize: '20px',
       lineHeight: '30px',
       color: '#4C81C7',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '30px',
+        lineHeight: '40px',
+      },
     },
     quoteContainer: {
       textAlign: 'center',
@@ -127,17 +185,35 @@ function Services() {
       paddingTop: '28px',
       paddingBottom: '28px',
       paddingRight: '20px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '20px',
+        padding: '44px 25px',
+        lineHeight: '40px',
+        maxWidth: '563px',
+      },
     },
     listWrapperContainer: {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       margin: '35px 16px',
+      [theme.breakpoints.up('md')]: {
+        marginBottom: '94px',
+      },
     },
     cardsContainerStyle: {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      marginBottom: '57px',
+      [theme.breakpoints.up('md')]: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: 'stretch',
+        paddingRight: '121px',
+        paddingLeft: '121px',
+        justifyContent: 'space-evenly',
+      },
     },
   };
   const cardContents = [
@@ -221,7 +297,7 @@ function Services() {
       <>
         <li>Appointment Setter</li>
       </>,
-      cardContainerStyle: {...styles.cardContainerStyle, marginBottom: '78px'} ,
+      cardContainerStyle: styles.cardContainerStyle,
       cardLabelStyle: styles.cardLabelStyle,
       cardContentStyle: styles.cardContentStyle,
       buttonWrapperStyle: styles.buttonWrapper,
@@ -232,8 +308,8 @@ function Services() {
   return (
     <>
       <Box sx={styles.headerContainer}>
-        <span style={styles.ourText}>Our</span>
-        <span style={{...styles.ourText, ...styles.servicesText}}> Services.</span>
+        <Typography component='span' sx={styles.ourText}>Our</Typography>
+        <Typography component='span' sx={{...styles.ourText, ...styles.servicesText}}> Services.</Typography>
       </Box>
       <Box sx={styles.cardsContainerStyle}>
         {cardContents.map((cardContent) => {
@@ -254,9 +330,9 @@ function Services() {
         })}
       </Box>
       <Box sx={styles.serviceCoverageLabelContainer}>
-        <span style={styles.serviceCoverageLabel}>
+        <Typography component='span' sx={styles.serviceCoverageLabel}>
           Service Coverage
-        </span>
+        </Typography>
       </Box>
       <Box sx={styles.serviceCoverageContainer}>
         <ul style={{margin: '0px'}}>
@@ -276,7 +352,7 @@ function Services() {
         </Box>
       </Box>
       <Box sx={styles.quoteContainer}>
-        <span style={styles.quoteText}>Our Tools and Systems to help you manage your staff remotely</span>
+        <Typography component='span' sx={styles.quoteText}>Our Tools and Systems to help you manage your staff remotely</Typography>
       </Box>
       <Box sx={styles.listWrapperContainer}>
         <Box sx={styles.listContainer}>
