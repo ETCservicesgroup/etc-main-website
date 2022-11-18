@@ -25,6 +25,9 @@ const HowItWorks = () => {
         height: '200px',
         marginBottom: '80px',
       },
+      [theme.breakpoints.up('xl')]: {
+        paddingLeft: '192px',
+      },
     },
     howText: {
       fontStyle: 'normal',
