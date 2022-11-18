@@ -9,10 +9,11 @@ import CallIcon from '@mui/icons-material/Call';
 
 interface IHeaderProps {
   setVisiblePage: Function,
+  visiblePage: string,
 }
 
 function Header(props: IHeaderProps) {
-  const { setVisiblePage } = props;
+  const { setVisiblePage, visiblePage } = props;
   const styles = {
     headerContainer: {
       position: 'sticky',
@@ -118,6 +119,7 @@ function Header(props: IHeaderProps) {
       fontSize: '20px',
       lineHeight: '26px',
       color: '#4C81C7',
+      cursor: 'pointer',
     },
     contactUsTextContainer: {
       borderRight: '2px solid #4C81C7',
@@ -139,6 +141,29 @@ function Header(props: IHeaderProps) {
       boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)',
       borderRadius: '5px',
       padding: '0px 5px',
+    },
+    navBar: {
+      display: 'none',
+      [theme.breakpoints.up('lg')]: {
+        display: 'flex',
+        height: '60px',
+        background: '#06283D',
+      },
+    },
+    navBarLinkContainer: {
+      width: '20%',
+      textAlign: 'center',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'pointer',
+    },
+    navBarLink: {
+      color: '#DFF6FF',
+      fontStyle: 'normal',
+      fontWeight: 700,
+      fontSize: '20px',
+      lineHeight: '26px',
     },
   }
 
@@ -166,7 +191,14 @@ function Header(props: IHeaderProps) {
       </IconButton>
       <Box sx={styles.contactUsContainer}>
         <Box sx={styles.contactUsTextContainer}>
-          <Typography component='span' sx={styles.contactUsText}>Contact Us</Typography>
+          <Typography component='span'
+          sx={styles.contactUsText}
+          onClick={(e) => {
+            setVisiblePage(Pages.CONTACT_US);
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+          }}>
+          Contact Us
+        </Typography>
         </Box>
         <Box sx={styles.contactUsButtonsContainer}>
           <Box sx={styles.contactNumberContainer}>
@@ -178,6 +210,53 @@ function Header(props: IHeaderProps) {
             <Typography component='span' sx={styles.iconLabel}>info@etcservices.com</Typography>
           </Button>
         </Box>
+      </Box>
+    </Box>
+    <Box sx={styles.navBar}>
+      <Box 
+        sx={styles.navBarLinkContainer}
+        onClick={(e) => {
+          setVisiblePage(Pages.HOME);
+          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        }}
+      >
+        <Typography component='span' sx={(visiblePage===Pages.HOME) ? {...styles.navBarLink, color: '#47B5FF'} : styles.navBarLink}>Home</Typography>
+      </Box>
+      <Box 
+        sx={styles.navBarLinkContainer}
+        onClick={(e) => {
+          setVisiblePage(Pages.SERVICES);
+          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        }}
+      >
+        <Typography component='span' sx={(visiblePage===Pages.SERVICES) ? {...styles.navBarLink, color: '#47B5FF'} : styles.navBarLink}>Services</Typography>
+      </Box>
+      <Box 
+        sx={styles.navBarLinkContainer}
+        onClick={(e) => {
+          setVisiblePage(Pages.WHY_US);
+          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        }}
+      >
+        <Typography component='span' sx={(visiblePage===Pages.WHY_US) ? {...styles.navBarLink, color: '#47B5FF'} : styles.navBarLink}>Why Us</Typography>
+      </Box>
+      <Box 
+        sx={styles.navBarLinkContainer}
+        onClick={(e) => {
+          setVisiblePage(Pages.HOW_IT_WORKS);
+          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        }}
+      >
+        <Typography component='span' sx={(visiblePage===Pages.HOW_IT_WORKS) ? {...styles.navBarLink, color: '#47B5FF'} : styles.navBarLink}>How it Works</Typography>
+      </Box>
+      <Box 
+        sx={styles.navBarLinkContainer}
+        onClick={(e) => {
+          setVisiblePage(Pages.FAQ);
+          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        }}
+      >
+        <Typography component='span' sx={(visiblePage===Pages.FAQ) ? {...styles.navBarLink, color: '#47B5FF'} : styles.navBarLink}>FAQ</Typography>
       </Box>
     </Box>
     <Box>

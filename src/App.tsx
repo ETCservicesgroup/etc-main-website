@@ -12,7 +12,7 @@ function App() {
   const [visiblePage, setVisiblePage] = useState(Pages.HOME);
   return (
     <>
-      <Header setVisiblePage={setVisiblePage} />
+      <Header setVisiblePage={setVisiblePage} visiblePage={visiblePage}/>
       {visiblePage === Pages.HOME ? <Home /> : ''}
       {visiblePage === Pages.WHY_US ? <WhyUs /> : ''}
       {visiblePage === Pages.HOW_IT_WORKS ? <HowItWorks /> : ''}
