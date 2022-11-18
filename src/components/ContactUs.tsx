@@ -65,7 +65,6 @@ const ContactUs = (props: IContactUsProps) => {
       fontStyle: 'normal',
       fontWeight: 300,
       fontSize: '10px',
-      lineHeight: '30px',
       paddingLeft: '13px',
       paddingRight: '13px',
       maxWidth: '47.5%',
@@ -228,14 +227,13 @@ const ContactUs = (props: IContactUsProps) => {
           <Input id="contactNumber" placeholder='Contact Number' name='user_contact' sx={styles.input}/>
           <Input id="companyName" placeholder='Company Name' name='user_company' sx={styles.input}/>
           <Input id="subject" placeholder='Subject' name='user_subject' sx={{...styles.input, width: '100%', maxWidth: '100%'}}/>
-          <Input id="subject" placeholder='Leave us a message here' name='user_message' sx={{
+          <Input id="message" placeholder='Leave us a message here' name='user_message' sx={{
             ...styles.input,
             width: '100%', 
             maxWidth: '100%',
             height: '',
             maxHeight: '',
             marginBottom: '18px',
-            lineHeight: '20px',
             }}
             multiline
           />
