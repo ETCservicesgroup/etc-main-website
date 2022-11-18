@@ -1,8 +1,10 @@
-import { Box, IconButton, Menu, MenuItem } from '@mui/material';
+import { Box, Button, IconButton, Menu, MenuItem, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import React from 'react';
 import { Pages } from '../types/types';
 import { theme } from '..';
+import EmailIcon from '@mui/icons-material/Email';
+import CallIcon from '@mui/icons-material/Call';
 
 
 interface IHeaderProps {
@@ -79,6 +81,62 @@ function Header(props: IHeaderProps) {
         fontSize: '20px',
       },
     },
+    menuIconWrapper: {
+      [theme.breakpoints.up('lg')]: {
+        display: 'none',
+      },
+    },
+    contactUsContainer: {
+      display: 'none',
+      [theme.breakpoints.up('lg')]: {
+        display: 'flex',
+      },
+    },
+    contactNumberContainer: {
+      display: 'flex',
+      alignItems: 'center',
+    },
+    iconLabel: {
+      fontStyle: 'normal',
+      fontWeight: 500,
+      fontSize: '15px',
+      lineHeight: '20px',
+      color: '#4C81C7',
+      textTransform: 'lowercase',
+    },
+    contactUsIcon: {
+      color: '#4C81C7',
+      fontSize: '30px',
+      marginRight: '16px',
+    },
+    contactUsText: {
+      fontStyle: 'normal',
+      fontWeight: 700,
+      fontSize: '20px',
+      lineHeight: '26px',
+      color: '#4C81C7',
+    },
+    contactUsTextContainer: {
+      borderRight: '2px solid #4C81C7',
+      marginTop: '7.5px',
+      marginBottom: '7.5px',
+      paddingRight: '12px',
+      marginRight: '18px',
+    },
+    contactUsButtonsContainer: {
+      marginTop: '7.5px',
+      marginBottom: '7.5px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+    },
+    getStartedButtonSx: {
+      background: '#DFF6FF',
+      border: '1px solid rgba(76, 129, 199, 0.5)',
+      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)',
+      borderRadius: '5px',
+      padding: '0px 5px',
+    },
   }
 
   const [menuAnchorEl, setMenuAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -94,11 +152,29 @@ function Header(props: IHeaderProps) {
       <Box sx={styles.logoContainer}>
         <img src={process.env.PUBLIC_URL + '/assets/Logo.png'} alt="ETC Services Logo" style={styles.headerLogo}></img>
       </Box>
-      <IconButton onClick={((e) => {
+      <IconButton 
+      onClick={((e) => {
         setMenuAnchorEl(e.currentTarget.parentElement);
-      })}>
+      })}
+      sx={styles.menuIconWrapper}
+      >
         <MenuIcon sx={styles.menuIcon}/>
       </IconButton>
+      <Box sx={styles.contactUsContainer}>
+        <Box sx={styles.contactUsTextContainer}>
+          <Typography component='span' sx={styles.contactUsText}>Contact Us</Typography>
+        </Box>
+        <Box sx={styles.contactUsButtonsContainer}>
+          <Box sx={styles.contactNumberContainer}>
+              <CallIcon sx={styles.contactUsIcon}/>
+              <Typography component='span' sx={styles.iconLabel}>+63 917 1624539</Typography>
+          </Box>
+          <Button variant='contained' sx={styles.getStartedButtonSx}>
+            <EmailIcon sx={{...styles.contactUsIcon, marginRight: '6.5px'}}/>
+            <Typography component='span' sx={styles.iconLabel}>info@etcservices.com</Typography>
+          </Button>
+        </Box>
+      </Box>
     </Box>
     <Box>
       <Menu
