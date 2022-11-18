@@ -31,6 +31,9 @@ function Footer(props) {
       [theme.breakpoints.up('md')]: {
         fontSize: '14px',
       },
+      [theme.breakpoints.up('lg')]: {
+        display: 'none',
+      },
     },
     footerLinksAndLogoContainer: {
       display: 'flex',
@@ -47,6 +50,9 @@ function Footer(props) {
     footerIconsContainer: {
       color: '#DFF6FF',
       marginTop: '10px',
+      [theme.breakpoints.up('lg')]: {
+        marginBottom: '20px',
+      },
     },
     footerLinks: {
       fontSize: '14px',
@@ -54,6 +60,9 @@ function Footer(props) {
       color: '#DFF6FF',
       paddingBottom: '10px',
       [theme.breakpoints.up('md')]: {
+        fontSize: '16px',
+      },
+      [theme.breakpoints.up('lg')]: {
         fontSize: '16px',
       },
     },
@@ -89,7 +98,21 @@ function Footer(props) {
         width: '220px',
         height: '78px',
       },
-    }
+      [theme.breakpoints.up('lg')]: {
+        width: '230px',
+        height: '81.61px',
+      },
+    },
+    footerTextLg: {
+      display: 'none',
+      [theme.breakpoints.up('lg')]: {
+        display: 'block',
+        textAlign: 'center',
+        fontSize: '14px',
+        color: '#DFF6FF',
+        fontWeight: 400,
+      },
+    },
   }
 
   return (
@@ -109,6 +132,9 @@ function Footer(props) {
             <FacebookIcon sx={styles.icon}/>
             <TwitterIcon sx={styles.icon}/>
             <LinkedInIcon sx={styles.icon}/>
+          </Box>
+          <Box sx={styles.footerTextLg}>
+            <span>Ⓒ ETCServices 2022. All Rights Reserved.</span>
           </Box>
         </Box>
       </Box>
