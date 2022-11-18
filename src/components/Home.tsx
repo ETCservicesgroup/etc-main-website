@@ -17,6 +17,11 @@ function Home(props) {
         paddingLeft: '32px',
         paddingRight: '32px',
       },
+      [theme.breakpoints.up('lg')]: {
+        height: '594px',
+        paddingTop: '95px',
+        paddingLeft: '40px',
+      },
     },
     heading1: {
       color: 'white',
@@ -28,6 +33,11 @@ function Home(props) {
       [theme.breakpoints.up('md')]: {
         lineHeight: '75px',
         fontSize: '60px',
+        marginBottom: '15px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '70px',
+        marginBottom: '25px',
       },
     },
     heading2: {
@@ -41,6 +51,9 @@ function Home(props) {
         lineHeight: '75px',
         fontSize: '90px',
         marginBottom: '85px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '100px',
       },
     },
     getStartedButtonSx: {
@@ -73,6 +86,9 @@ function Home(props) {
       [theme.breakpoints.up('md')]: {
         fontSize: '30px',
       },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '35px',
+      },
     },
     aboutUsLabelContainer: {
       position: 'absolute',
@@ -84,11 +100,21 @@ function Home(props) {
       height: '44px',
       transform: 'translate(-20px, -22px)',
       paddingRight: '40px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
       [theme.breakpoints.up('md')]: {
         width: '498px',
         height: '60px',
         transform: 'translate(-197px, -30px)',
         fontSize: '30px',
+        paddingRight: '59px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        width: '498px',
+        height: '70px',
+        transform: 'translate(-197px, -35px)',
+        fontSize: '35px',
         paddingRight: '59px',
       },
     },
@@ -115,6 +141,12 @@ function Home(props) {
         paddingTop: '66px',
         marginBottom: '60px',
       },
+      [theme.breakpoints.up('lg')]: {
+        paddingBottom: '29px',
+        paddingRight: '65px',
+        paddingLeft: '65px',
+        marginBottom: '80px',
+      },
     },
     companyText: {
       color: '#4C81C7',
@@ -130,6 +162,9 @@ function Home(props) {
       marginBottom: '56px',
       [theme.breakpoints.up('md')]: {
         marginBottom: '90px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        marginBottom: '116px',
       },
     },
   }
