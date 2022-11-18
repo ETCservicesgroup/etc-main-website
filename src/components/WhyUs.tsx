@@ -29,6 +29,7 @@ const WhyUs = () => {
       paddingLeft: '16px',
       paddingTop: '27px',
       maxWidth: '595px',
+      borderRadius: '0px 20px 20px 0px',
       [theme.breakpoints.up('md')]: {
         height: '519px',
         paddingRight: '46px',
@@ -37,6 +38,11 @@ const WhyUs = () => {
       },
       [theme.breakpoints.up('lg')]: {
         height: '566px',
+      },
+      [theme.breakpoints.up('xl')]: {
+        paddingLeft: '246px',
+        maxWidth: '850px',
+        paddingRight: '120px',
       },
     },
     whyText:{
@@ -182,6 +188,10 @@ const WhyUs = () => {
         height: '70px',
         transform: 'translate(-59px, -35px)',
         paddingRight: '70px',
+      },
+      [theme.breakpoints.up('xl')]: {
+        width: '595px',
+        transform: 'translate(-42px, -35px)',
       },
     },
     whatWeOfferLabelText: {
