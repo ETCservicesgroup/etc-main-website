@@ -18,7 +18,7 @@ function App() {
       {visiblePage === Pages.HOW_IT_WORKS ? <HowItWorks /> : ''}
       {visiblePage === Pages.SERVICES ? <Services /> : ''}
       {visiblePage === Pages.CONTACT_US ? <ContactUs setVisiblePage={setVisiblePage}/> : ''}
-      <Footer />
+      <Footer setVisiblePage={setVisiblePage}/>
     </>
   );
 }
