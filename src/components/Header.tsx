@@ -33,6 +33,10 @@ function Header(props: IHeaderProps) {
       [theme.breakpoints.up('lg')]: {
         position: 'static',
       },
+      [theme.breakpoints.up('xl')]: {
+        paddingLeft: '200px',
+        paddingRight: '200px',
+      },
     },
     menuIcon: {
       color: '#4C81C7',
@@ -148,6 +152,10 @@ function Header(props: IHeaderProps) {
         display: 'flex',
         height: '60px',
         background: '#06283D',
+      },
+      [theme.breakpoints.up('xl')]: {
+        paddingLeft: '200px',
+        paddingRight: '200px',
       },
     },
     navBarLinkContainer: {
