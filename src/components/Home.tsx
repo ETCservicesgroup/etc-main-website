@@ -22,6 +22,10 @@ function Home(props) {
         paddingTop: '95px',
         paddingLeft: '40px',
       },
+      [theme.breakpoints.up('xl')]: {
+        paddingLeft: '200px',
+        maxWidth: '700px',
+      },
     },
     heading1: {
       color: 'white',
@@ -67,6 +71,10 @@ function Home(props) {
         width: '180px',
         height: '50px',
       },
+      [theme.breakpoints.up('lg')]: {
+        width: '234px',
+        height: '63px',
+      },
       margin: '0 auto',
     },
     getStartedTextSx: {
@@ -74,6 +82,9 @@ function Home(props) {
       fontSize: '20px',
       [theme.breakpoints.up('md')]: {
         fontSize: '23px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '30px',
       },
     },
     buttonWrapper: {
@@ -117,6 +128,9 @@ function Home(props) {
         fontSize: '35px',
         paddingRight: '59px',
       },
+      [theme.breakpoints.up('xl')]: {
+        width: '698px',
+      },
     },
     aboutUsContent: {
       fontSize: '16px',
@@ -146,6 +160,10 @@ function Home(props) {
         paddingRight: '65px',
         paddingLeft: '65px',
         marginBottom: '80px',
+      },
+      [theme.breakpoints.up('xl')]: {
+        paddingRight: '265px',
+        paddingLeft: '265px',
       },
     },
     companyText: {
