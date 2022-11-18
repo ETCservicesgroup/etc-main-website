@@ -29,6 +29,9 @@ function Header(props: IHeaderProps) {
       [theme.breakpoints.up('md')]: {
         height: '100px',
       },
+      [theme.breakpoints.up('lg')]: {
+        position: 'static',
+      },
     },
     menuIcon: {
       color: '#4C81C7',
@@ -148,6 +151,7 @@ function Header(props: IHeaderProps) {
 
   return (
     <>
+    {/* @ts-ignore */}
     <Box sx={styles.headerContainer}>
       <Box sx={styles.logoContainer}>
         <img src={process.env.PUBLIC_URL + '/assets/Logo.png'} alt="ETC Services Logo" style={styles.headerLogo}></img>
