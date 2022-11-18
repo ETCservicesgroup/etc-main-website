@@ -15,6 +15,10 @@ const WhyUs = () => {
       [theme.breakpoints.up('md')]: {
         marginBottom: '90px',
       },
+      [theme.breakpoints.up('lg')]: {
+        marginBottom: '115px',
+        paddingBottom: '163px',
+      },
     },
     headerTextContainer: {
       background: 'rgba(6, 40, 61, 0.7)',
@@ -31,6 +35,9 @@ const WhyUs = () => {
         paddingLeft: '46px',
         paddingTop: '42px',
       },
+      [theme.breakpoints.up('lg')]: {
+        height: '566px',
+      },
     },
     whyText:{
       fontSize: '40px',
@@ -40,6 +47,9 @@ const WhyUs = () => {
       [theme.breakpoints.up('md')]: {
         fontSize: '60px',
         lineHeight: '75px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '70px',
       },
     },
     etcText:{
@@ -51,6 +61,10 @@ const WhyUs = () => {
         fontSize: '90px',
         lineHeight: '90px',
       },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '100px',
+        lineHeight: '100px',
+      },
     },
     servicesText:{
       fontSize: '60px',
@@ -60,6 +74,10 @@ const WhyUs = () => {
       [theme.breakpoints.up('md')]: {
         fontSize: '90px',
         lineHeight: '90px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '100px',
+        lineHeight: '100px',
       },
     },
     headerContentText:{
@@ -98,6 +116,12 @@ const WhyUs = () => {
         height: '50px',
         marginTop: '20px',
       },
+      [theme.breakpoints.up('lg')]: {
+        transform: 'translateY(0px)',
+        width: '234px',
+        height: '63px',
+        marginTop: '50px',
+      },
     },
     getStartedTextSx: {
       fontWeight: 700,
@@ -105,15 +129,15 @@ const WhyUs = () => {
       [theme.breakpoints.up('md')]: {
         fontSize: '23px',
       },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '30px',
+      },
     },
     whatWeOfferContainer: {
       borderTop: '2px solid #EEEEEE',
       paddingTop: '46px',
       paddingLeft: '16px',
       paddingRight: '16px',
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'space-around',
       marginBottom: '19px',
       [theme.breakpoints.up('md')]: {
         paddingTop: '90px',
@@ -121,6 +145,15 @@ const WhyUs = () => {
         paddingRight: '40px',
         marginBottom: '40px',
       },
+      [theme.breakpoints.up('lg')]: {
+        marginBottom: '60px',
+        display: 'flex',
+      },
+    },
+    cardsContainer: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
     },
     whatWeOfferLabelContainer: {
       position: 'absolute',
@@ -132,10 +165,19 @@ const WhyUs = () => {
       height: '44px',
       transform: 'translate(-20px, -22px)',
       paddingRight: '40px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
       [theme.breakpoints.up('md')]: {
         width: '373px',
         height: '60px',
         transform: 'translate(-34px, -30px)',
+      },
+      [theme.breakpoints.up('lg')]: {
+        width: '413px',
+        height: '70px',
+        transform: 'translate(-59px, -35px)',
+        paddingRight: '70px',
       },
     },
     whatWeOfferLabelText: {
@@ -144,6 +186,9 @@ const WhyUs = () => {
       color: '#DFF6FF',
       [theme.breakpoints.up('md')]: {
         fontSize: '30px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '35px',
       },
     },
     cardContainerStyle: {
@@ -164,6 +209,9 @@ const WhyUs = () => {
         padding: '12px 28px',
         alignItems: 'center',
       },
+      [theme.breakpoints.up('lg')]: {
+        width: '687px',
+      },
     },
     iconStyle: {
       width: '50px',
@@ -175,7 +223,10 @@ const WhyUs = () => {
         margin: '0',
         marginRight: '23px',
       },
-
+      [theme.breakpoints.up('lg')]: {
+        width: '70px',
+        height: '70px',
+      },
     },
     cardLabelStyle: {
       fontStyle: 'normal',
@@ -183,6 +234,9 @@ const WhyUs = () => {
       fontSize: '20px',
       lineHeight: '30px',
       color: '#4C81C7',
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '25px',
+      },
     },
     cardContentStyle: {
       textAlign: 'left',
@@ -192,6 +246,9 @@ const WhyUs = () => {
       lineHeight: '20px',
       color: '#06283D',
       marginTop: '0px',
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '16px',
+      },
     },
     whyUsImage: {
       marginBottom: '39px',
@@ -205,6 +262,18 @@ const WhyUs = () => {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'center',
+      [theme.breakpoints.up('lg')]: {
+        display: 'none',
+      },
+    },
+    imageContainerLG: {
+      display: 'none',
+      [theme.breakpoints.up('lg')]: {
+        display: 'block',
+      },
+    },
+    imageLG: {
+      height: 'calc(100% - 20px)'
     }
   }
 
@@ -304,21 +373,26 @@ const WhyUs = () => {
         </Typography>
       </Box>
       <Box sx={styles.whatWeOfferContainer}>
-        {cardContents.map((cardContent) => {
-          return (
-            <Card 
-              iconUrl = {cardContent.iconUrl}
-              cardLabel = {cardContent.cardLabel}
-              cardContent = {cardContent.cardContent}
-              cardContainerStyle = {cardContent.cardContainerStyle}
-              iconStyle = {cardContent.iconStyle}
-              cardLabelStyle = {cardContent.cardLabelStyle}
-              cardContentStyle = {cardContent.cardContentStyle}
-              iconAlt = {cardContent.iconAlt}
-              page = {Pages.WHY_US} 
-              />
-          )
-        })}
+        <Box sx={styles.imageContainerLG}>
+          <Box component='img' src={process.env.PUBLIC_URL + '/assets/WhyUsImageLG.png'} alt="Group of people" sx={styles.imageLG}/>
+        </Box>
+        <Box sx={styles.cardsContainer}>
+          {cardContents.map((cardContent) => {
+            return (
+              <Card
+                iconUrl = {cardContent.iconUrl}
+                cardLabel = {cardContent.cardLabel}
+                cardContent = {cardContent.cardContent}
+                cardContainerStyle = {cardContent.cardContainerStyle}
+                iconStyle = {cardContent.iconStyle}
+                cardLabelStyle = {cardContent.cardLabelStyle}
+                cardContentStyle = {cardContent.cardContentStyle}
+                iconAlt = {cardContent.iconAlt}
+                page = {Pages.WHY_US}
+                />
+            )
+          })}
+        </Box>
       </Box>
       <Box sx={styles.imageContainer}>
         <Box component='img' src={process.env.PUBLIC_URL + '/assets/GroupOfPeople.png'} alt="Group of people" sx={styles.whyUsImage}></Box>
