@@ -11,14 +11,19 @@ const HowItWorks = () => {
       backgroundSize: 'cover',
       height: '137px',
       paddingLeft: '16px',
-      paddingTop: '30px',
       marginBottom: '35px',
       backgroundPosition: 'center',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
       [theme.breakpoints.up('md')]: {
         height: '150px',
         paddingLeft: '32px',
-        paddingTop: '37px',
         marginBottom: '60px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        height: '200px',
+        marginBottom: '80px',
       },
     },
     howText: {
@@ -30,6 +35,9 @@ const HowItWorks = () => {
       [theme.breakpoints.up('md')]: {
         fontSize: '60px',
       },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '70px',
+      },
     },
     workText: {
       fontStyle: 'normal',
@@ -39,6 +47,9 @@ const HowItWorks = () => {
       color: '#DFF6FF',
       [theme.breakpoints.up('md')]: {
         fontSize: '60px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '70px',
       },
     },
     cardContainerStyle1: {
@@ -64,7 +75,10 @@ const HowItWorks = () => {
     iconStyle: {
       width: '185px',
       height: '185px',
-
+      [theme.breakpoints.up('md')]: {
+        width: '242px',
+        height: '242px',
+      },
     },
     cardLabelStyle: {
       fontStyle: 'normal',
@@ -74,6 +88,9 @@ const HowItWorks = () => {
       color: '#4C81C7',
       [theme.breakpoints.up('md')]: {
         lineHeight: '30px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '25px',
       },
     },
     cardContentStyle: {
@@ -88,6 +105,11 @@ const HowItWorks = () => {
         fontSize: '16px',
         lineHeight: '25px',
         marginTop: '10px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '20px',
+        lineHeight: '25px',
+        marginTop: '20px',
       },
     },
     workWithUsContainer: {
@@ -105,6 +127,11 @@ const HowItWorks = () => {
         height: '300px',
         marginBottom: '60px',
       },
+      [theme.breakpoints.up('lg')]: {
+        marginTop: '0px',
+        height: '330px',
+        marginBottom: '80px',
+      },
     },
     getStartedButtonSx: {
       background: 'rgba(76, 129, 199, 0.8)',
@@ -118,6 +145,10 @@ const HowItWorks = () => {
         width: '180px',
         height: '50px',
       },
+      [theme.breakpoints.up('lg')]: {
+        width: '234px',
+        height: '63px',
+      },
     },
     workWithUsText: {
       fontStyle: 'normal',
@@ -130,6 +161,10 @@ const HowItWorks = () => {
         fontSize: '60px',
         marginBottom: '58px',
       },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '70px',
+        marginBottom: '58px',
+      },
     },
     buttonWrapper: {
       textAlign: 'center',
@@ -139,6 +174,9 @@ const HowItWorks = () => {
       fontSize: '20px',
       [theme.breakpoints.up('md')]: {
         fontSize: '23px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '30px',
       },
     },
   };
