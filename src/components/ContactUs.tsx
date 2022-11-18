@@ -19,10 +19,14 @@ const ContactUs = (props: IContactUsProps) => {
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       textAlign: 'center',
-      paddingTop: '45px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
       [theme.breakpoints.up('md')]: {
         height: '250px',
-        paddingTop: '66px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        height: '302px',
       },
     },
     headerContentWrapper: {
@@ -37,6 +41,9 @@ const ContactUs = (props: IContactUsProps) => {
         fontSize: '60px',
         lineHeight: '75px',
       },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '70px',
+      },
     },
     headerContent: {
       fontStyle: 'normal',
@@ -48,6 +55,10 @@ const ContactUs = (props: IContactUsProps) => {
         fontSize: '15px',
         lineHeight: '30px',
       },
+      [theme.breakpoints.up('lg')]: {
+        paddingTop: '21px',
+        fontSize: '20px',
+      },
     },
     formContainerWrapper: {
       padding: '25px 15px',
@@ -58,6 +69,12 @@ const ContactUs = (props: IContactUsProps) => {
         padding: '31px 85px',
         paddingBottom: '50px',
         textAlign: 'left',
+      },
+      [theme.breakpoints.up('lg')]: {
+        width: '60%',
+        padding: '0px',
+        paddingRight: '30px',
+        borderBottom: 'none',
       },
     },
     formLabelContainer:{
@@ -97,7 +114,7 @@ const ContactUs = (props: IContactUsProps) => {
       border: '0.5px solid #06283D',
       borderRadius: '10px',
       width: '47.5%',
-      height: '24px',
+      minHeight: '24px',
       fontStyle: 'normal',
       fontWeight: 300,
       fontSize: '10px',
@@ -106,7 +123,7 @@ const ContactUs = (props: IContactUsProps) => {
       maxWidth: '47.5%',
       marginBottom: '15px',
       [theme.breakpoints.up('md')]: {
-        height: '40px',
+        minHeight: '40px',
         fontSize: '14px',
         marginBottom: '20px',
       },
@@ -131,11 +148,17 @@ const ContactUs = (props: IContactUsProps) => {
       width: '130px',
       height: '35px',
       margin: '0 auto',
-
+      [theme.breakpoints.up('md')]: {
+        width: '180px',
+        height: '50px',
+      },
     },
     getStartedTextSx: {
       fontWeight: 700,
       fontSize: '16px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '23px',
+      },
     },
     interestedTextContainer: {
       display: 'flex',
@@ -147,6 +170,12 @@ const ContactUs = (props: IContactUsProps) => {
         paddingTop: '55px',
         textAlign: 'left',
       },
+      [theme.breakpoints.up('lg')]: {
+        flexDirection: 'row',
+        padding: '0px',
+        margin: '0px',
+        marginBottom: '13px',
+      },
     },
     interestedText: {
       fontStyle: 'normal',
@@ -154,6 +183,7 @@ const ContactUs = (props: IContactUsProps) => {
       fontSize: '14px',
       lineHeight: '17px',
       color: '#000000',
+      whiteSpace: 'pre-wrap'
     },
     contactUsCard: {
       background: 'rgba(238, 238, 238, 0.8)',
@@ -168,6 +198,13 @@ const ContactUs = (props: IContactUsProps) => {
       [theme.breakpoints.up('md')]: {
         height: '177px',
         padding: '27px 22px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        width: '100%',
+        paddingTop: '22px',
+        paddingBottom: '17px',
+        paddingLeft: '14px',
+        paddingRight: '14px',
       },
     },
     contactNumberContainer: {
@@ -205,6 +242,10 @@ const ContactUs = (props: IContactUsProps) => {
       flexDirection: 'column',
       alignItems: 'center',
       marginBottom: '35px',
+      [theme.breakpoints.up('lg')]: {
+        margin: '0px',
+        marginBottom: '32px',
+      },
     },
     imagesContainer: {
       width: '255px',
@@ -212,6 +253,9 @@ const ContactUs = (props: IContactUsProps) => {
       justifyContent: 'space-between',
       [theme.breakpoints.up('md')]: {
         width: '305px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        width: '388px',
       },
     },
     image: {
@@ -222,6 +266,10 @@ const ContactUs = (props: IContactUsProps) => {
         height: '378px',
         width: '95px',
       },
+      [theme.breakpoints.up('lg')]: {
+        height: '480px',
+        width: '120px',
+      },
     },
     imagesContainerWrapper: {
       display: 'flex',
@@ -231,9 +279,16 @@ const ContactUs = (props: IContactUsProps) => {
       [theme.breakpoints.up('md')]: {
         paddingTop: '55px',
       },
+      [theme.breakpoints.up('lg')]: {
+        margin: '0px',
+        padding: '0px',
+      },
     },
     formSentImage: {
       width: '358px',
+      [theme.breakpoints.up('lg')]: {
+        width: '442px',
+      },
     },
     formSentLabel: {
       fontStyle: 'normal',
@@ -242,6 +297,12 @@ const ContactUs = (props: IContactUsProps) => {
       lineHeight: '45px',
       textAlign: 'center',
       color: '#4C81C7',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '35px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '45px',
+      },
     },
     formSentContent: {
       fontStyle: 'normal',
@@ -251,6 +312,13 @@ const ContactUs = (props: IContactUsProps) => {
       textAlign: 'center',
       color: '#06283D',
       marginBottom: '56px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '16px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        marginTop: '20px',
+        fontSize: '20px',
+      },
     },
     formSentContainer: {
       display: 'flex',
@@ -258,13 +326,36 @@ const ContactUs = (props: IContactUsProps) => {
       alignItems: 'center',
       marginTop: '25px',
       marginBottom: '78px',
+      paddingLeft: '14px',
+      paddingRight: '14px',
+      [theme.breakpoints.up('md')]: {
+        paddingLeft: '18px',
+        paddingRight: '18px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        paddingLeft: '32px',
+        paddingRight: '32px',
+      },
     },
     wrapper: {
       [theme.breakpoints.up('md')]: {
         display: 'flex',
         justifyContent: 'space-evenly',
       },
+      [theme.breakpoints.up('lg')]: {
+        flexDirection: 'column',
+        width: '40%',
+        paddingTop: '46px',
+        justifyContent: 'flex-start',
+      },
     },
+    formContainer: {
+      [theme.breakpoints.up('lg')]: {
+        display: 'flex',
+        padding: '32px',
+        marginBottom: '54px',
+      },
+    }
   };
   const { setVisiblePage } = props;
   const form = React.useRef<null | HTMLFormElement>();
@@ -312,7 +403,8 @@ const ContactUs = (props: IContactUsProps) => {
     </Box>
     {!formSent 
     ? 
-    <>
+    <Box sx={styles.formContainer}>
+      {/* @ts-ignore */}
       <Box sx={styles.formContainerWrapper}>
         <Box sx={styles.formLabelContainer}>
           <Typography component='span' sx={styles.formLabel}>Please fill in the form and we will be in touch soon.</Typography>
@@ -328,9 +420,26 @@ const ContactUs = (props: IContactUsProps) => {
             ...styles.input,
             width: '100%', 
             maxWidth: '100%',
-            height: '',
-            maxHeight: '',
+            minHeight: '160px',
             marginBottom: '18px',
+            '& textarea': {
+              fontSize: '10px',
+              minHeight: '160px',
+              fontStyle: 'normal',
+              fontWeight: 300,
+              [theme.breakpoints.up('md')]: {
+                minHeight: '283px',
+                fontSize: '14px',
+                fontStyle: 'normal',
+                fontWeight: 300,
+                paddingTop: '4px',
+                paddingBottom: '4px',
+              },
+            },
+            [theme.breakpoints.up('md')]: {
+              minHeight: '283px',
+              marginBottom: '25px',
+            },
             }}
             multiline
             onChange={ (event) => {setValue(event.target.value, setMessage)} }
@@ -346,8 +455,9 @@ const ContactUs = (props: IContactUsProps) => {
       </Box>
       <Box sx={styles.wrapper}>
         <Box>
+          {/* @ts-ignore */}
           <Box sx={styles.interestedTextContainer}>
-            <Typography component='span' sx={styles.interestedText}>Interested in working with us?</Typography>
+            <Typography component='span' sx={styles.interestedText}>Interested in working with us? </Typography>
             <Typography component='span' sx={styles.interestedText}>You can also reach us at:</Typography>
           </Box>
           <Box sx={styles.contactUsCardContainer}>
@@ -375,14 +485,25 @@ const ContactUs = (props: IContactUsProps) => {
           </Box>
         </Box>
       </Box>
-    </>
+    </Box>
     :
     <Box sx={styles.formSentContainer}>
       <Box component='img' sx={styles.formSentImage} src={process.env.PUBLIC_URL + 'assets/FormSent.png'}/>
       <Typography component='span' sx={styles.formSentLabel}>Thank you for providing us with your details</Typography>
       <Typography component='span' sx={styles.formSentContent}>A Representative will get in touch with you soon.</Typography>
       <Box sx={styles.buttonWrapper}>
-        <Button variant='contained' sx={{...styles.getStartedButtonSx, width: '181px', height: '35px'}} onClick={handleClick}>
+        <Button variant='contained' sx={{...styles.getStartedButtonSx,
+          width: '181px',
+          height: '35px',
+          [theme.breakpoints.up('md')]: {
+            width: '181px',
+            height: '35px',
+          },
+          [theme.breakpoints.up('lg')]: {
+            width: '225px',
+            height: '50px',
+          },
+          }} onClick={handleClick}>
           <Typography component='span' sx={styles.getStartedTextSx}>
             Go to Homepage
           </Typography>
