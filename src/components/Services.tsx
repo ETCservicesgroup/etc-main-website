@@ -12,10 +12,17 @@ function Services() {
       backgroundSize: 'cover',
       padding: '30px 16px',
       marginBottom: '35px',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
       [theme.breakpoints.up('md')]: {
         height: '150px',
         padding: '37px 32px',
         marginBottom: '58px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        height: '200px',
+        marginBottom: '78px',
       },
     },
     ourText: {
@@ -26,6 +33,9 @@ function Services() {
       color: '#47B5FF',
       [theme.breakpoints.up('md')]: {
         fontSize: '60px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '70px',
       },
     },
     servicesText: {
@@ -112,13 +122,25 @@ function Services() {
         transform: 'translate(-40px, -30px)',
         paddingRight: '60px',
       },
+      [theme.breakpoints.up('lg')]: {
+        height: '70px',
+        width: '595px',
+        transform: 'translate(-201px, -35px)',
+        paddingRight: '65px',
+      },
     },
     serviceCoverageLabel: {
       fontSize: '20px',
       fontWeight: 800,
       color: '#DFF6FF',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
       [theme.breakpoints.up('md')]: {
         fontSize: '30px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '35px',
       },
     },
     serviceCoverageContainer: {
@@ -138,12 +160,23 @@ function Services() {
         padding: '58px',
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'center',
         marginBottom: '59px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '25px',
+        lineHeight: '40px',
+        marginBottom: '80px',
+        padding: '78px',
       },
     },
     servicesImage: {
       width: '280px',
       height: '236px',
+      [theme.breakpoints.up('lg')]: {
+        width: '364px',
+        height: '333px',
+      },
     },
     imageContainer: {
       marginTop: '36px',
@@ -154,6 +187,10 @@ function Services() {
         height: '231px',
         marginTop: '0px',
       },
+      [theme.breakpoints.up('lg')]: {
+        width: '364px',
+        height: '333px',
+      },
     },
     quoteText: {
       fontStyle: 'normal',
@@ -163,6 +200,10 @@ function Services() {
       color: '#4C81C7',
       [theme.breakpoints.up('md')]: {
         fontSize: '30px',
+        lineHeight: '40px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '35px',
         lineHeight: '40px',
       },
     },
@@ -191,6 +232,9 @@ function Services() {
         lineHeight: '40px',
         maxWidth: '563px',
       },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '25px',
+      },
     },
     listWrapperContainer: {
       display: 'flex',
@@ -198,7 +242,7 @@ function Services() {
       alignItems: 'center',
       margin: '35px 16px',
       [theme.breakpoints.up('md')]: {
-        marginBottom: '94px',
+        marginBottom: '80px',
       },
     },
     cardsContainerStyle: {
@@ -213,6 +257,9 @@ function Services() {
         paddingRight: '121px',
         paddingLeft: '121px',
         justifyContent: 'space-evenly',
+      },
+      [theme.breakpoints.up('lg')]: {
+        marginBottom: '74px',
       },
     },
   };
@@ -308,9 +355,12 @@ function Services() {
   return (
     <>
       <Box sx={styles.headerContainer}>
-        <Typography component='span' sx={styles.ourText}>Our</Typography>
-        <Typography component='span' sx={{...styles.ourText, ...styles.servicesText}}> Services.</Typography>
+        <Box>
+          <Typography component='span' sx={styles.ourText}>Our</Typography>
+          <Typography component='span' sx={{...styles.ourText, ...styles.servicesText}}> Services.</Typography>
+        </Box>
       </Box>
+      {/* @ts-ignore */}
       <Box sx={styles.cardsContainerStyle}>
         {cardContents.map((cardContent) => {
           return (
@@ -348,7 +398,7 @@ function Services() {
           <li>Client Services - Dedicated Account Manager to support you</li>
         </ul>
         <Box sx={styles.imageContainer}>
-          <img src={process.env.PUBLIC_URL + '/assets/servicesImage.png'} alt='Services' style={styles.servicesImage}></img>
+          <Box component='img' src={process.env.PUBLIC_URL + '/assets/servicesImage.png'} alt='Services' sx={styles.servicesImage}></Box>
         </Box>
       </Box>
       <Box sx={styles.quoteContainer}>
