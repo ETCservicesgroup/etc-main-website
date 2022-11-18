@@ -24,6 +24,9 @@ function Services() {
         height: '200px',
         marginBottom: '78px',
       },
+      [theme.breakpoints.up('xl')]: {
+        paddingLeft: '181px',
+      },
     },
     ourText: {
       fontStyle: 'normal',
@@ -127,6 +130,9 @@ function Services() {
         width: '595px',
         transform: 'translate(-201px, -35px)',
         paddingRight: '65px',
+      },
+      [theme.breakpoints.up('xl')]: {
+        transform: 'translate(-42px, -35px)',
       },
     },
     serviceCoverageLabel: {
@@ -260,6 +266,10 @@ function Services() {
       },
       [theme.breakpoints.up('lg')]: {
         marginBottom: '74px',
+      },
+      [theme.breakpoints.up('xl')]: {
+        paddingRight: '200px',
+        paddingLeft: '200px',
       },
     },
   };
