@@ -355,6 +355,10 @@ const ContactUs = (props: IContactUsProps) => {
         padding: '32px',
         marginBottom: '54px',
       },
+      [theme.breakpoints.up('xl')]: {
+        paddingRight: '200px',
+        paddingLeft: '200px',
+      },
     }
   };
   const { setVisiblePage } = props;
