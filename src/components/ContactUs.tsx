@@ -198,6 +198,21 @@ const ContactUs = (props: IContactUsProps) => {
   const { setVisiblePage } = props;
   const form = React.useRef<null | HTMLFormElement>();
   const [formSent, setFormSent] = React.useState<boolean>(false);
+  const [firstName, setFirstName] = React.useState<boolean>(false);
+  const [lastName, setLastName] = React.useState<boolean>(false);
+  const [email, setEmail] = React.useState<boolean>(false);
+  const [contact, setContact] = React.useState<boolean>(false);
+  const [company, setCompany] = React.useState<boolean>(false);
+  const [subject, setSubject] = React.useState<boolean>(false);
+  const [message, setMessage] = React.useState<boolean>(false);
+
+  const setValue = (value: string, setState: Function) => {
+    if (value) {
+      setState(true);
+    } else {
+      setState(false);
+    }
+  }
 
   //@ts-ignore
   const sendEmail = (event) => {
@@ -230,12 +245,12 @@ const ContactUs = (props: IContactUsProps) => {
       <Box sx={styles.formContainerWrapper}>
         <Typography component='span' sx={styles.formLabel}>Please fill in the form and we will be in touch soon.</Typography>
         <Box component='form' sx={styles.formContaier} ref={form}>
-          <Input id="firstName" placeholder='First Name' name='user_fname' sx={{...styles.input, marginRight: '5%'}} />
-          <Input id="lastName" placeholder='Last Name' name='user_lname' sx={styles.input}/>
-          <Input id="email" placeholder='Email' name='user_email' sx={{...styles.input, marginRight: '5%'}}/>
-          <Input id="contactNumber" placeholder='Contact Number' name='user_contact' sx={styles.input}/>
-          <Input id="companyName" placeholder='Company Name' name='user_company' sx={styles.input}/>
-          <Input id="subject" placeholder='Subject' name='user_subject' sx={{...styles.input, width: '100%', maxWidth: '100%'}}/>
+          <Input id="firstName" placeholder='First Name' name='user_fname' sx={{...styles.input, marginRight: '5%'}} onChange={ (event) => {setValue(event.target.value, setFirstName)} }/>
+          <Input id="lastName" placeholder='Last Name' name='user_lname' sx={styles.input} onChange={ (event) => {setValue(event.target.value, setLastName)} }/>
+          <Input id="email" placeholder='Email' name='user_email' sx={{...styles.input, marginRight: '5%'}} onChange={ (event) => {setValue(event.target.value, setEmail)} }/>
+          <Input id="contactNumber" placeholder='Contact Number' name='user_contact' sx={styles.input} onChange={ (event) => {setValue(event.target.value, setContact)} }/>
+          <Input id="companyName" placeholder='Company Name' name='user_company' sx={styles.input} onChange={ (event) => {setValue(event.target.value, setCompany)} }/>
+          <Input id="subject" placeholder='Subject' name='user_subject' sx={{...styles.input, width: '100%', maxWidth: '100%'}} onChange={ (event) => {setValue(event.target.value, setSubject)} }/>
           <Input id="message" placeholder='Leave us a message here' name='user_message' sx={{
             ...styles.input,
             width: '100%', 
@@ -245,9 +260,10 @@ const ContactUs = (props: IContactUsProps) => {
             marginBottom: '18px',
             }}
             multiline
+            onChange={ (event) => {setValue(event.target.value, setMessage)} }
           />
           <Box sx={styles.buttonWrapper}>
-            <Button variant='contained' sx={styles.getStartedButtonSx} onClick={sendEmail}>
+            <Button variant='contained' sx={styles.getStartedButtonSx} onClick={sendEmail} disabled={!(firstName && lastName && email && contact && company && subject && message)}>
               <Typography component='span' sx={styles.getStartedTextSx}>
                 Submit
               </Typography>
