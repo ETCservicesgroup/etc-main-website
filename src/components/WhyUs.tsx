@@ -148,12 +148,16 @@ const WhyUs = () => {
       [theme.breakpoints.up('lg')]: {
         marginBottom: '60px',
         display: 'flex',
+        justifyContent: 'center',
       },
     },
     cardsContainer: {
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'space-around',
+      [theme.breakpoints.up('lg')]: {
+        width: '687px',
+      },
     },
     whatWeOfferLabelContainer: {
       position: 'absolute',
@@ -270,6 +274,7 @@ const WhyUs = () => {
       display: 'none',
       [theme.breakpoints.up('lg')]: {
         display: 'block',
+        marginRight: '63px',
       },
     },
     imageLG: {
