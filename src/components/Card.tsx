@@ -62,9 +62,9 @@ const Card = (props: ICardProps) => {
         return (
           <Box sx={cardContainerStyle}>
             <Typography component='span' sx={cardLabelStyle}>{cardLabel}</Typography>
-            <ul style={cardContentStyle}>
+            <Box component='ul' sx={cardContentStyle}>
               {cardContent}
-            </ul>
+            </Box>
             <Box sx={buttonWrapperStyle}>
               <Button variant='contained' sx={buttonStyle}>
                 <Typography component='span' sx={buttonLabelStyle}>
@@ -77,8 +77,8 @@ const Card = (props: ICardProps) => {
       default:
         return (
           <Box sx={cardContainerStyle}>
-            <span style={cardLabelStyle}>{cardLabel}</span>
-            <p style={cardContentStyle}>{cardContent}</p>
+            <Typography component='span' sx={cardLabelStyle}>{cardLabel}</Typography>
+            <Typography component='p' sx={cardContentStyle}>{cardContent}</Typography>
           </Box>
         );
   }
