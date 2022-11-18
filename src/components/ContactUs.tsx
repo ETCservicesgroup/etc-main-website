@@ -69,6 +69,15 @@ const ContactUs = (props: IContactUsProps) => {
       paddingRight: '13px',
       maxWidth: '47.5%',
       marginBottom: '15px',
+      '&:hover:not(.Mui-disabled):before': {
+        borderBottom: '0px',
+      },
+      '&:after': {
+        borderBottom: '0px',
+      },
+      '&:before': {
+        borderBottom: '0px',
+      },
     },
     buttonWrapper: {
       textAlign: 'center',
@@ -221,7 +230,7 @@ const ContactUs = (props: IContactUsProps) => {
       <Box sx={styles.formContainerWrapper}>
         <Typography component='span' sx={styles.formLabel}>Please fill in the form and we will be in touch soon.</Typography>
         <Box component='form' sx={styles.formContaier} ref={form}>
-          <Input id="firstName" placeholder='First Name' name='user_fname' sx={{...styles.input, marginRight: '5%'}}/>
+          <Input id="firstName" placeholder='First Name' name='user_fname' sx={{...styles.input, marginRight: '5%'}} />
           <Input id="lastName" placeholder='Last Name' name='user_lname' sx={styles.input}/>
           <Input id="email" placeholder='Email' name='user_email' sx={{...styles.input, marginRight: '5%'}}/>
           <Input id="contactNumber" placeholder='Contact Number' name='user_contact' sx={styles.input}/>
