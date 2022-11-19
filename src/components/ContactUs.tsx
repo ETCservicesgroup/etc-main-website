@@ -148,6 +148,10 @@ const ContactUs = (props: IContactUsProps) => {
       width: '130px',
       height: '35px',
       margin: '0 auto',
+      '&.Mui-disabled': {
+        background: 'rgba(76, 129, 199, 0.4)',
+        color: 'rgba(255, 255, 255, 0.2)',
+      },
       [theme.breakpoints.up('md')]: {
         width: '180px',
         height: '50px',
