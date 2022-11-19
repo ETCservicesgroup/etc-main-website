@@ -4,15 +4,20 @@ import { theme } from "..";
 import { Pages } from "../types/types";
 import Card from "./Card";
 
+interface IHowItWorksProps {
+  setVisiblePage: Function;
+};
 
-const HowItWorks = () => {
-    const [width, setWidth] = React.useState(window.innerWidth);
 
-    React.useEffect(() => {
-      const handleWindowResize = () => setWidth(window.innerWidth);
-      window.addEventListener("resize", handleWindowResize);
-      return () => window.removeEventListener("resize", handleWindowResize);
-    }, []);
+const HowItWorks = (props: IHowItWorksProps) => {
+  const { setVisiblePage } = props;
+  const [width, setWidth] = React.useState(window.innerWidth);
+
+  React.useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
 
   const styles = {
     headingContainer: {
@@ -301,7 +306,13 @@ const HowItWorks = () => {
       <Box sx={styles.workWithUsContainer}>
         <Typography component='span' sx={styles.workWithUsText}>Work with Us</Typography>
         <Box sx={styles.buttonWrapper}>
-          <Button variant='contained' sx={styles.getStartedButtonSx}>
+          <Button 
+            variant='contained'
+            sx={styles.getStartedButtonSx}
+            onClick={(e) => {
+            setVisiblePage(Pages.CONTACT_US);
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+          }}>
             <Typography component='span' sx={styles.getStartedTextSx}>
               Get Started
             </Typography>
