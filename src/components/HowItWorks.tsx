@@ -247,7 +247,7 @@ const HowItWorks = (props: IHowItWorksProps) => {
       iconAlt: 'Recruitment Icon',
     },
     {
-      iconUrl: width >= 1080 ? '/assets/4HowItWorks.png' : '/assets/candidate.png',
+      iconUrl: width >= 1080 ? '/assets/4-HowItWorks.png' : '/assets/candidate.png',
       cardLabel: 'Choose your candidate',
       cardContent: 'We will send you resumes of the best candidates and choose whomever you want to interview.',
       cardContainerStyle: styles.cardContainerStyle2,
