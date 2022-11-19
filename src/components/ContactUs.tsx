@@ -452,8 +452,8 @@ const ContactUs = (props: IContactUsProps) => {
               lineHeight: '20px',
               [theme.breakpoints.up('md')]: {
                 padding: '0px',
-                minHeight: '315px',
-                maxHeight: '315px',
+                minHeight: '330px',
+                maxHeight: '330px',
                 fontSize: '14px',
                 fontStyle: 'normal',
                 fontWeight: 300,
@@ -461,8 +461,8 @@ const ContactUs = (props: IContactUsProps) => {
               },
             },
             [theme.breakpoints.up('md')]: {
-              minHeight: '320px',
-              maxHeight: '320px',
+              minHeight: '335px',
+              maxHeight: '335px',
               marginBottom: '25px',
             },
             }}
