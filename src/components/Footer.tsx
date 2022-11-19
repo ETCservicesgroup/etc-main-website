@@ -27,8 +27,10 @@ function Footer(props: IHeaderProps) {
         height: '223px',
       },
     },
-    footerText: {
+    footerTextWrapper: {
       textAlign: 'center',
+    },
+    footerText: {
       fontSize: '10px',
       color: '#DFF6FF',
       fontWeight: 400,
@@ -161,8 +163,8 @@ function Footer(props: IHeaderProps) {
           </Box>
         </Box>
       </Box>
-      <Box sx={styles.footerText}>
-        <Typography component='span'>Ⓒ ETCServices 2022. All Rights Reserved.</Typography>
+      <Box sx={styles.footerTextWrapper}>
+        <Typography component='span' sx={styles.footerText}>Ⓒ ETCServices 2022. All Rights Reserved.</Typography>
       </Box>
     </Box>
   );
