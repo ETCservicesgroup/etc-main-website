@@ -1,8 +1,14 @@
 import { Box, Button, Typography } from '@mui/material';
 import { theme } from '..';
+import { Pages } from '../types/types';
 
-//@ts-ignore
-function Home(props) {
+interface IHomeProps {
+  setVisiblePage: Function,
+}
+
+
+function Home(props: IHomeProps) {
+  const { setVisiblePage } = props;
   const styles = {
     homeHeader: {
       width: '100vw',
@@ -21,6 +27,7 @@ function Home(props) {
         height: '594px',
         paddingTop: '95px',
         paddingLeft: '40px',
+        maxWidth: '525px',
       },
       [theme.breakpoints.up('xl')]: {
         paddingLeft: '200px',
@@ -198,7 +205,13 @@ function Home(props) {
           <Typography component='span' sx={styles.heading1}>Your partner towards</Typography>
           <Typography component='span' sx={styles.heading2}>GROWTH</Typography>
           <Box sx={styles.buttonWrapper}>
-            <Button variant='contained' sx={styles.getStartedButtonSx}>
+            <Button
+            variant='contained' 
+            sx={styles.getStartedButtonSx}
+            onClick={(e) => {
+            setVisiblePage(Pages.CONTACT_US);
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+          }}>
               <Typography component='span' sx={styles.getStartedTextSx}>
                 Get Started
               </Typography>
