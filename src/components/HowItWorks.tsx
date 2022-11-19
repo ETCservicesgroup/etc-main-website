@@ -1,10 +1,19 @@
 import { Box, Button, Typography } from "@mui/material";
+import React from "react";
 import { theme } from "..";
 import { Pages } from "../types/types";
 import Card from "./Card";
 
 
 const HowItWorks = () => {
+    const [width, setWidth] = React.useState(window.innerWidth);
+
+    React.useEffect(() => {
+      const handleWindowResize = () => setWidth(window.innerWidth);
+      window.addEventListener("resize", handleWindowResize);
+      return () => window.removeEventListener("resize", handleWindowResize);
+    }, []);
+
   const styles = {
     headingContainer: {
       backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/HowItWorksHeader.png'})`,
@@ -56,13 +65,16 @@ const HowItWorks = () => {
       },
     },
     cardContainerStyle1: {
-      background: 'rgba(238, 238, 238, 0.8)',
+      background: '#EEEEEE',
       display: 'flex',
       padding: '16px',
       justifyContent: 'space-evenly',
       alignItems: 'center',
       [theme.breakpoints.up('md')]: {
         padding: '0px 50px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        justifyContent: 'center',
       },
     },
     cardContainerStyle2: {
@@ -74,6 +86,10 @@ const HowItWorks = () => {
       [theme.breakpoints.up('md')]: {
         padding: '0px 50px',
       },
+      [theme.breakpoints.up('lg')]: {
+        justifyContent: 'center',
+        flexDirection: 'row',
+      },
     },
     iconStyle: {
       width: '185px',
@@ -81,6 +97,11 @@ const HowItWorks = () => {
       [theme.breakpoints.up('md')]: {
         width: '242px',
         height: '242px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        width: '422px',
+        height: '242px',
+        marginRight: '43px',
       },
     },
     cardLabelStyle: {
@@ -131,7 +152,7 @@ const HowItWorks = () => {
         marginBottom: '60px',
       },
       [theme.breakpoints.up('lg')]: {
-        marginTop: '0px',
+        marginTop: '74px',
         height: '330px',
         marginBottom: '80px',
       },
@@ -182,12 +203,17 @@ const HowItWorks = () => {
         fontSize: '30px',
       },
     },
+    contentContainerStyle: {
+      [theme.breakpoints.up('lg')]: {
+        maxWidth: '551px',
+      },
+    }
   };
 
   const cardContents = [
     {
-      iconUrl: '/assets/discovery.png',
-      cardLabel: 'We invite you for a discovey meeting',
+      iconUrl: width >= 1080 ? '/assets/1HowItWorks.png' : '/assets/discovery.png',
+      cardLabel: 'We invite you for a discovery meeting',
       cardContent: 'We will help you find a solution in searching and hiring for virtual staff that is qualified and will meet your specific business needs.',
       cardContainerStyle: styles.cardContainerStyle1,
       iconStyle: styles.iconStyle,
@@ -196,7 +222,7 @@ const HowItWorks = () => {
       iconAlt: 'Discovery Icon',
     },
     {
-      iconUrl: '/assets/jobdesc.png',
+      iconUrl: width >= 1080 ? '/assets/2HowItWorks.png' : '/assets/jobdesc.png',
       cardLabel: 'Provide your job description',
       cardContent: 'Give us a job description of your requirement for the role you want to fill in.',
       cardContainerStyle: styles.cardContainerStyle2,
@@ -206,7 +232,7 @@ const HowItWorks = () => {
       iconAlt: 'Job Description Icon',
     },
     {
-      iconUrl: '/assets/recruitment.png',
+      iconUrl: width >= 1080 ? '/assets/3HowItWorks.png' : '/assets/recruitment.png',
       cardLabel: 'Recruitment',
       cardContent: 'Our team will source, screen and interview candidates who are perfect for what you are looking for.',
       cardContainerStyle: styles.cardContainerStyle1,
@@ -216,7 +242,7 @@ const HowItWorks = () => {
       iconAlt: 'Recruitment Icon',
     },
     {
-      iconUrl: '/assets/candidate.png',
+      iconUrl: width >= 1080 ? '/assets/4HowItWorks.png' : '/assets/candidate.png',
       cardLabel: 'Choose your candidate',
       cardContent: 'We will send you resumes of the best candidates and choose whomever you want to interview.',
       cardContainerStyle: styles.cardContainerStyle2,
@@ -226,7 +252,7 @@ const HowItWorks = () => {
       iconAlt: 'Candidate Icon',
     },
     {
-      iconUrl: '/assets/onboarding.png',
+      iconUrl: width >= 1080 ? '/assets/5HowItWorks.png' : '/assets/onboarding.png',
       cardLabel: 'Onboarding',
       cardContent: "We'll get them set up for you - Payroll, Time Tracker system, and employee monitoring.",
       cardContainerStyle: styles.cardContainerStyle1,
@@ -236,7 +262,7 @@ const HowItWorks = () => {
       iconAlt: 'Onboarding Icon',
     },
     {
-      iconUrl: '/assets/management.png',
+      iconUrl: width >= 1080 ? '/assets/6HowItWorks.png' : '/assets/management.png',
       cardLabel: 'Management',
       cardContent: 'We will send you resumes of the best candidates and choose whomever you want to interview.',
       cardContainerStyle: styles.cardContainerStyle2,
@@ -267,6 +293,7 @@ const HowItWorks = () => {
               cardContentStyle = {cardContent.cardContentStyle}
               iconAlt = {cardContent.iconAlt} 
               page = {Pages.HOW_IT_WORKS}
+              contentContainerStyle = {styles.contentContainerStyle}
               />
           )
         })}
