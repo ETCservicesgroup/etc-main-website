@@ -112,10 +112,21 @@ function Header(props: IHeaderProps) {
       color: '#4C81C7',
       textTransform: 'lowercase',
     },
+    buttonLabel: {
+      fontStyle: 'normal',
+      fontWeight: 500,
+      fontSize: '15px',
+      lineHeight: '20px',
+      textTransform: 'lowercase',
+    },
     contactUsIcon: {
       color: '#4C81C7',
       fontSize: '30px',
       marginRight: '16px',
+    },
+    emailIcon: {
+      fontSize: '30px',
+      marginRight: '6.5px'
     },
     contactUsText: {
       fontStyle: 'normal',
@@ -123,7 +134,6 @@ function Header(props: IHeaderProps) {
       fontSize: '20px',
       lineHeight: '26px',
       color: '#4C81C7',
-      cursor: 'pointer',
     },
     contactUsTextContainer: {
       borderRight: '2px solid #4C81C7',
@@ -145,6 +155,11 @@ function Header(props: IHeaderProps) {
       boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)',
       borderRadius: '5px',
       padding: '0px 5px',
+      color: '#4C81C7',
+      '&:hover': {
+        backgroundColor: '#4C81C7',
+        color: '#DFF6FF',
+      },
     },
     navBar: {
       display: 'none',
@@ -165,9 +180,12 @@ function Header(props: IHeaderProps) {
       alignItems: 'center',
       justifyContent: 'center',
       cursor: 'pointer',
+      color: '#DFF6FF',
+      '&:hover': {
+        color: '#47B5FF',
+      }
     },
     navBarLink: {
-      color: '#DFF6FF',
       fontStyle: 'normal',
       fontWeight: 700,
       fontSize: '20px',
@@ -199,12 +217,7 @@ function Header(props: IHeaderProps) {
       </IconButton>
       <Box sx={styles.contactUsContainer}>
         <Box sx={styles.contactUsTextContainer}>
-          <Typography component='span'
-          sx={styles.contactUsText}
-          onClick={(e) => {
-            setVisiblePage(Pages.CONTACT_US);
-            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-          }}>
+          <Typography component='span' sx={styles.contactUsText}>
           Contact Us
         </Typography>
         </Box>
@@ -213,9 +226,15 @@ function Header(props: IHeaderProps) {
               <CallIcon sx={styles.contactUsIcon}/>
               <Typography component='span' sx={styles.iconLabel}>+63 917 1624539</Typography>
           </Box>
-          <Button variant='contained' sx={styles.getStartedButtonSx}>
-            <EmailIcon sx={{...styles.contactUsIcon, marginRight: '6.5px'}}/>
-            <Typography component='span' sx={styles.iconLabel}>info@etcservices.com</Typography>
+          <Button 
+          variant='contained' 
+          sx={styles.getStartedButtonSx} 
+          onClick={(e) => {
+            setVisiblePage(Pages.CONTACT_US);
+            window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+          }}>
+            <EmailIcon sx={styles.emailIcon}/>
+            <Typography component='span' sx={styles.buttonLabel}>info@etcservices.com</Typography>
           </Button>
         </Box>
       </Box>
