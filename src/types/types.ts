@@ -6,3 +6,12 @@ export enum Pages {
   FAQ = 'FAQ',
   CONTACT_US = 'CONTACT_US',
 }
+export enum FaqPanel {
+  FIRST = 'FIRST_PANEL',
+  SECOND = 'SECOND_PANEL',
+  THIRD = 'THIRD_PANEL',
+  FOURTH = 'FOURTH_PANEL',
+  FIFTH = 'FIFTH_PANEL',
+  SIXTH = 'SIXTH_PANEL',
+  SEVENTH = 'SEVENTH_PANEL'
+}

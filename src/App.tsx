@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ContactUs from "./components/ContactUs";
+import Faq from "./components/Faq";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -18,6 +19,7 @@ function App() {
       {visiblePage === Pages.HOW_IT_WORKS ? <HowItWorks setVisiblePage={setVisiblePage}/> : ''}
       {visiblePage === Pages.SERVICES ? <Services setVisiblePage={setVisiblePage}/> : ''}
       {visiblePage === Pages.CONTACT_US ? <ContactUs setVisiblePage={setVisiblePage}/> : ''}
+      {visiblePage === Pages.FAQ ? <Faq setVisiblePage={setVisiblePage}/> : ''}
       <Footer setVisiblePage={setVisiblePage}/>
     </>
   );
