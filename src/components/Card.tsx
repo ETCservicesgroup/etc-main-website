@@ -17,6 +17,7 @@ interface ICardProps {
   buttonStyle?: object,
   buttonLabelStyle?: object,
   buttonLabel?: string,
+  setVisiblePage?: Function,
 }
 
 const Card = (props: ICardProps) => {
@@ -35,6 +36,7 @@ const Card = (props: ICardProps) => {
     buttonStyle,
     buttonLabelStyle,
     buttonLabel,
+    setVisiblePage,
   } = props;
 
   switch(page) {
@@ -66,7 +68,15 @@ const Card = (props: ICardProps) => {
               {cardContent}
             </Box>
             <Box sx={buttonWrapperStyle}>
-              <Button variant='contained' sx={buttonStyle}>
+              <Button 
+                variant='contained'
+                sx={buttonStyle}
+                onClick={(e) => {
+                if(setVisiblePage){
+                  setVisiblePage(Pages.CONTACT_US);
+                  window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+                }
+              }}>
                 <Typography component='span' sx={buttonLabelStyle}>
                   {buttonLabel}
                 </Typography>

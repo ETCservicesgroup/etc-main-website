@@ -3,7 +3,12 @@ import { theme } from "..";
 import { Pages } from "../types/types";
 import Card from "./Card";
 
-function Services() {
+interface IHomeProps {
+  setVisiblePage: Function,
+}
+
+function Services(props: IHomeProps) {
+  const { setVisiblePage } = props;
   const styles = {
     headerContainer: {
       backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/servicesHeader.png'})`,
@@ -388,6 +393,7 @@ function Services() {
               buttonWrapperStyle = {cardContent.buttonWrapperStyle}
               buttonStyle = {cardContent.buttonStyle}
               buttonLabelStyle = {cardContent.buttonTextStyle}
+              setVisiblePage = {setVisiblePage}
               />
           )
         })}
