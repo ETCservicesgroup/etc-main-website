@@ -1,6 +1,6 @@
 import { Box, Button, Input, Typography } from "@mui/material";
 import React from "react";
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import EmailIcon from '@mui/icons-material/Email';
 import CallIcon from '@mui/icons-material/Call';
 import PlaceIcon from '@mui/icons-material/Place';
@@ -161,6 +161,9 @@ const ContactUs = (props: IContactUsProps) => {
       fontWeight: 700,
       fontSize: '16px',
       [theme.breakpoints.up('md')]: {
+        fontSize: '16px',
+      },
+      [theme.breakpoints.up('lg')]: {
         fontSize: '23px',
       },
     },
@@ -381,6 +384,7 @@ const ContactUs = (props: IContactUsProps) => {
   const { setVisiblePage } = props;
   const form = React.useRef<null | HTMLFormElement>();
   const [formSent, setFormSent] = React.useState<boolean>(false);
+  const [formSubmitted, setFormSubmitted] = React.useState<boolean>(false);
   const [firstName, setFirstName] = React.useState<boolean>(false);
   const [lastName, setLastName] = React.useState<boolean>(false);
   const [email, setEmail] = React.useState<boolean>(false);
@@ -400,17 +404,18 @@ const ContactUs = (props: IContactUsProps) => {
   //@ts-ignore
   const sendEmail = (event) => {
     event.preventDefault();
-    setFormSent(true);
-
-    // emailjs.sendForm('service_7qqplwt', 'template_qkytlas', form.current!, 'JfoOguY9S6TK8_GG3')
-    // .then((result) => {
-    //     setFormSent(true);
-    // }, (error) => {
-    //     console.log(error.text);
-    // });
+    emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_KEY!, process.env.REACT_APP_EMAILJS_TEMPLATE_KEY!, form.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!)
+    .then((result) => {
+        setFormSubmitted(true);
+        setFormSent(true);
+    }, (error) => {
+        setFormSubmitted(true);
+        setFormSent(false);
+    });
   };
   const handleClick = () => {
     setVisiblePage(Pages.HOME);
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
   }
 
   return (
@@ -422,7 +427,7 @@ const ContactUs = (props: IContactUsProps) => {
         <Typography component='p' sx={styles.headerContent}>Send us any questions, tips or advice you need. Take advantage of our customer support option.</Typography>
       </Box>
     </Box>
-    {!formSent 
+    {(!formSubmitted && !formSent)
     ?
     // @ts-ignore
     <Box sx={styles.formContainer}>
@@ -516,6 +521,10 @@ const ContactUs = (props: IContactUsProps) => {
       </Box>
     </Box>
     :
+    ''
+    }
+    {(formSent && formSubmitted)
+    ?
     <Box sx={styles.formSentContainer}>
       <Box component='img' sx={styles.formSentImage} src={process.env.PUBLIC_URL + 'assets/FormSent.png'}/>
       <Typography component='span' sx={styles.formSentLabel}>Thank you for providing us with your details</Typography>
@@ -539,7 +548,37 @@ const ContactUs = (props: IContactUsProps) => {
         </Button>
       </Box>
     </Box>
+    :
+    ''
     }
+    {(!formSent && formSubmitted)
+      ?
+      <Box sx={styles.formSentContainer}>
+        <Box component='img' sx={styles.formSentImage} src={process.env.PUBLIC_URL + 'assets/formError.png'}/>
+        <Typography component='span' sx={styles.formSentLabel}>Message not delivered.</Typography>
+        <Typography component='span' sx={styles.formSentContent}>We were unable to deliver the message despite of several attempts. Please Try again later.</Typography>
+        <Box sx={styles.buttonWrapper}>
+          <Button variant='contained' sx={{...styles.getStartedButtonSx,
+            width: '181px',
+            height: '35px',
+            [theme.breakpoints.up('md')]: {
+              width: '181px',
+              height: '35px',
+            },
+            [theme.breakpoints.up('lg')]: {
+              width: '225px',
+              height: '50px',
+            },
+            }} onClick={handleClick}>
+            <Typography component='span' sx={styles.getStartedTextSx}>
+              Go to Homepage
+            </Typography>
+          </Button>
+        </Box>
+      </Box>
+      :
+      ''
+      }
     </>
   );
 };
