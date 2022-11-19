@@ -242,9 +242,13 @@ const ContactUs = (props: IContactUsProps) => {
       flexDirection: 'column',
       alignItems: 'center',
       marginBottom: '35px',
+      [theme.breakpoints.up('md')]: {
+        maxWidth: '305px',
+      },
       [theme.breakpoints.up('lg')]: {
         margin: '0px',
         marginBottom: '32px',
+        maxWidth: '388px',
       },
     },
     imagesContainer: {
@@ -347,6 +351,7 @@ const ContactUs = (props: IContactUsProps) => {
         width: '40%',
         paddingTop: '46px',
         justifyContent: 'flex-start',
+        alignItems: 'center',
       },
     },
     formContainer: {
@@ -433,7 +438,7 @@ const ContactUs = (props: IContactUsProps) => {
               fontWeight: 300,
               lineHeight: '15px',
               [theme.breakpoints.up('md')]: {
-                minHeight: '283px',
+                minHeight: '320px',
                 fontSize: '14px',
                 fontStyle: 'normal',
                 fontWeight: 300,
@@ -443,7 +448,7 @@ const ContactUs = (props: IContactUsProps) => {
               },
             },
             [theme.breakpoints.up('md')]: {
-              minHeight: '283px',
+              minHeight: '320px',
               marginBottom: '25px',
             },
             }}
