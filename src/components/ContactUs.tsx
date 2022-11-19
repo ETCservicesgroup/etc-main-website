@@ -64,14 +64,14 @@ const ContactUs = (props: IContactUsProps) => {
       padding: '25px 15px',
       textAlign: 'center',
       paddingBottom: '35px',
-      borderBottom: '1px solid #EEEEEE',
+      maxWidth: '390px',
       [theme.breakpoints.up('md')]: {
-        padding: '31px 85px',
+        paddingTop: '31px',
         paddingBottom: '50px',
         textAlign: 'left',
+        maxWidth: '598px',
       },
       [theme.breakpoints.up('lg')]: {
-        width: '60%',
         padding: '0px',
         paddingRight: '30px',
         borderBottom: 'none',
@@ -100,9 +100,9 @@ const ContactUs = (props: IContactUsProps) => {
       borderRadius: '20px',
       textAlign: 'left',
       padding: '19px',
+      marginTop: '9px',
       [theme.breakpoints.up('md')]: {
         fontSize: '14px',
-        marginBottom: '20px',
         paddingTop: '38px',
         paddingBottom: '27px',
         paddingRight: '43px',
@@ -244,6 +244,7 @@ const ContactUs = (props: IContactUsProps) => {
       marginBottom: '35px',
       [theme.breakpoints.up('md')]: {
         maxWidth: '305px',
+        marginRight: '21px'
       },
       [theme.breakpoints.up('lg')]: {
         margin: '0px',
@@ -342,23 +343,30 @@ const ContactUs = (props: IContactUsProps) => {
       },
     },
     wrapper: {
+      borderTop: '1px solid #EEEEEE',
+      width: '100%',
       [theme.breakpoints.up('md')]: {
         display: 'flex',
-        justifyContent: 'space-evenly',
+        justifyContent: 'center',
       },
       [theme.breakpoints.up('lg')]: {
+        maxWidth: '388px',
+        borderTop: '0px',
         flexDirection: 'column',
-        width: '40%',
         paddingTop: '46px',
         justifyContent: 'flex-start',
         alignItems: 'center',
       },
     },
     formContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
       [theme.breakpoints.up('lg')]: {
-        display: 'flex',
+        flexDirection: 'row',
         padding: '32px',
         marginBottom: '54px',
+        justifyContent: 'center',
       },
       [theme.breakpoints.up('xl')]: {
         paddingRight: '200px',
@@ -411,7 +419,8 @@ const ContactUs = (props: IContactUsProps) => {
       </Box>
     </Box>
     {!formSent 
-    ? 
+    ?
+    // @ts-ignore
     <Box sx={styles.formContainer}>
       {/* @ts-ignore */}
       <Box sx={styles.formContainerWrapper}>
