@@ -14,7 +14,7 @@ function App() {
     <>
       <Header setVisiblePage={setVisiblePage} visiblePage={visiblePage}/>
       {visiblePage === Pages.HOME ? <Home setVisiblePage={setVisiblePage}/> : ''}
-      {visiblePage === Pages.WHY_US ? <WhyUs /> : ''}
+      {visiblePage === Pages.WHY_US ? <WhyUs setVisiblePage={setVisiblePage}/> : ''}
       {visiblePage === Pages.HOW_IT_WORKS ? <HowItWorks /> : ''}
       {visiblePage === Pages.SERVICES ? <Services setVisiblePage={setVisiblePage}/> : ''}
       {visiblePage === Pages.CONTACT_US ? <ContactUs setVisiblePage={setVisiblePage}/> : ''}

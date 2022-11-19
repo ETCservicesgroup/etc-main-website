@@ -3,7 +3,12 @@ import { theme } from "..";
 import { Pages } from "../types/types";
 import Card from "./Card";
 
-const WhyUs = () => {
+interface IWhyUsProps {
+  setVisiblePage: Function,
+}
+
+const WhyUs = (props: IWhyUsProps) => {
+  const { setVisiblePage } = props;
   const styles = {
     headingContainer: {
       width: '100vw',
@@ -373,7 +378,13 @@ const WhyUs = () => {
           <Typography component='span' sx={styles.servicesText}>SERVICES</Typography>
           <Typography component='span' sx={styles.headerContentText}>We provide businesses with quality remote staff that matches your requirements and achieves scalable growth for your organization.</Typography>
           <Box sx={styles.buttonWrapper}>
-            <Button variant='contained' sx={styles.getStartedButtonSx}>
+            <Button 
+              variant='contained'
+              sx={styles.getStartedButtonSx} 
+              onClick={(e) => {
+              setVisiblePage(Pages.CONTACT_US);
+              window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+          }}>
               <Typography component='span' sx={styles.getStartedTextSx}>
                 Get Started
               </Typography>
