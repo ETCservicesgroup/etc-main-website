@@ -1,5 +1,6 @@
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Typography } from "@mui/material";
 import React from "react";
+import { theme } from "..";
 import { FaqPanel, Pages } from "../types/types";
 
 interface IFaqProps {
@@ -26,6 +27,11 @@ const Faq = (props: IFaqProps) => {
       justifyContent: 'center',
       paddingRight: '16px',
       marginBottom: '21px',
+      [theme.breakpoints.up('md')]: {
+        height: '150px',
+        paddingRight: '32px',
+        marginBottom: '42px',
+      },
     },
     headerContent: {
       fontStyle: 'normal',
@@ -33,9 +39,15 @@ const Faq = (props: IFaqProps) => {
       fontSize: '40px',
       lineHeight: '75px',
       color: '#47B5FF',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '60px',
+      },
     },
     faqContainer: {
       maxWidth: '390px',
+      [theme.breakpoints.up('md')]: {
+        maxWidth: '768px',
+      },
     },
     faqLabel: {
       fontFamily: 'Inter',
@@ -44,6 +56,9 @@ const Faq = (props: IFaqProps) => {
       fontSize: '30px',
       lineHeight: '45px',
       color: '#4C81C7',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '40px',
+      },
     },
     faqLabelContainer: {
       backgroundColor: '#EEEEEE',
@@ -53,6 +68,13 @@ const Faq = (props: IFaqProps) => {
       flexDirection: 'column',
       maxWidth: '390px',
       marginBottom: '48px',
+      width: '100%',
+      alignItems: 'center',
+      justifyContent: 'center',
+      [theme.breakpoints.up('md')]: {
+        maxWidth: '768px',
+        height: '105px',
+      },
     },
     faqLabelContent: {
       fontStyle: 'normal',
@@ -60,6 +82,10 @@ const Faq = (props: IFaqProps) => {
       fontSize: '14px',
       lineHeight: '25px',
       color: '#06283D',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '16px',
+        marginTop: '8px',
+      },
     },
     accordionRoot: {
       boxShadow: '0px 0px 0px 0px',
@@ -70,6 +96,9 @@ const Faq = (props: IFaqProps) => {
         margin: '0px',
         '&:last-of-type': {
           marginBottom: '78px',
+          [theme.breakpoints.up('md')]: {
+            marginBottom: '90px',
+          },
         }
       },
       '&:last-of-type': {
@@ -85,6 +114,9 @@ const Faq = (props: IFaqProps) => {
       fontSize: '16px',
       lineHeight: '30px',
       color: '#4C81C7',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '20px',
+      },
     },
     accordionLabelContainer: {
       padding: '0px',
@@ -93,16 +125,25 @@ const Faq = (props: IFaqProps) => {
       '&.Mui-expanded': {
         borderBottom: '0px',
         minHeight: '90px',
+        [theme.breakpoints.up('md')]: {
+          minHeight: '96px',
+        },
       },
       '& .MuiAccordionSummary-content': {
         display: 'flex',
         margin: '0px',
-      }
+      },
+      [theme.breakpoints.up('md')]: {
+        minHeight: '96px',
+      },
     },
     accordionLabelContentWrapper: {
-      paddingBottom: '6px',
       paddingRight: '15px',
       paddingLeft: '56px',
+      [theme.breakpoints.up('md')]: {
+        paddingRight: '32px',
+        paddingLeft: '66px',
+      },
     },
     accordionContent: {
       fontStyle: 'normal',
@@ -111,10 +152,17 @@ const Faq = (props: IFaqProps) => {
       lineHeight: '25px',
       textAlign: 'justify',
       color: '#06283D',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '16px',
+      },
     },
     accordionContentContainer: {
       padding: '23px 56px',
       paddingTop: '0px',
+      [theme.breakpoints.up('md')]: {
+        padding: '32px 66px',
+        paddingTop: '0px',
+      },
     },
     footerContainer: {
       height: '190px',
@@ -126,6 +174,10 @@ const Faq = (props: IFaqProps) => {
       flexDirection: 'column',
       alignItems: 'center',
       padding: '46px 16px',
+      [theme.breakpoints.up('md')]: {
+        height: '300px',
+        padding: '98px 33px',
+      },
     },
     footerContent: {
       fontStyle: 'normal',
@@ -134,10 +186,16 @@ const Faq = (props: IFaqProps) => {
       lineHeight: '35px',
       textAlign: 'center',
       color: '#DFF6FF',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '50px',
+      },
     },
     buttonWrapper: {
       textAlign: 'center',
       marginTop: '23px',
+      [theme.breakpoints.up('md')]: {
+        marginTop: '59px',
+      },
     },
     getStartedButtonSx: {
       width: '151px',
@@ -146,6 +204,10 @@ const Faq = (props: IFaqProps) => {
       boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.3)',
       borderRadius: '20px',
       textTransform: 'none',
+      [theme.breakpoints.up('md')]: {
+        width: '180px',
+        height: '50px',
+      },
     },
     getStartedTextSx: {
       fontStyle: 'normal',
@@ -153,6 +215,9 @@ const Faq = (props: IFaqProps) => {
       fontSize: '20px',
       lineHeight: '26px',
       color: '#FFFFFF',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '23px',
+      },
     },
   }
   const [expanded, setExpanded] = React.useState<string | false>(false);
@@ -221,9 +286,37 @@ const Faq = (props: IFaqProps) => {
                   <Box>
                     {expanded === content.panelNumber
                     ?
-                      <Typography component='span' sx={{...styles.accordionLabel, fontSize: '30px', fontWeight: 500, position: 'absolute', left: '15px'}}>-</Typography>
+                      <Typography 
+                        component='span'
+                        sx={{
+                            ...styles.accordionLabel,
+                            fontSize: '30px',
+                            fontWeight: 500,
+                            position: 'absolute',
+                            left: '15px',
+                            [theme.breakpoints.up('md')]: {
+                              fontSize: '32px',
+                              left: '32px',
+                            },
+                        }}>
+                      -
+                      </Typography>
                     :
-                      <Typography component='span' sx={{...styles.accordionLabel, fontSize: '30px', fontWeight: 500, position: 'absolute', left: '15px'}}>+</Typography>
+                      <Typography
+                        component='span'
+                        sx={{
+                          ...styles.accordionLabel,
+                          fontSize: '30px',
+                          fontWeight: 500,
+                          position: 'absolute',
+                          left: '15px',
+                          [theme.breakpoints.up('md')]: {
+                            fontSize: '32px',
+                            left: '32px',
+                          },
+                        }}>
+                      +
+                        </Typography>
                     }
                   </Box>
                   <Box>
