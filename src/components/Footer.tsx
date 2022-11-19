@@ -157,12 +157,12 @@ function Footer(props: IHeaderProps) {
             <LinkedInIcon sx={styles.icon}/>
           </Box>
           <Box sx={styles.footerTextLg}>
-            <span>Ⓒ ETCServices 2022. All Rights Reserved.</span>
+            <Typography component='span'>Ⓒ ETCServices 2022. All Rights Reserved.</Typography>
           </Box>
         </Box>
       </Box>
       <Box sx={styles.footerText}>
-        <span>Ⓒ ETCServices 2022. All Rights Reserved.</span>
+        <Typography component='span'>Ⓒ ETCServices 2022. All Rights Reserved.</Typography>
       </Box>
     </Box>
   );

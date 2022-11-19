@@ -431,6 +431,7 @@ const ContactUs = (props: IContactUsProps) => {
               minHeight: '160px',
               fontStyle: 'normal',
               fontWeight: 300,
+              lineHeight: '15px',
               [theme.breakpoints.up('md')]: {
                 minHeight: '283px',
                 fontSize: '14px',
@@ -438,6 +439,7 @@ const ContactUs = (props: IContactUsProps) => {
                 fontWeight: 300,
                 paddingTop: '4px',
                 paddingBottom: '4px',
+                lineHeight: '20px',
               },
             },
             [theme.breakpoints.up('md')]: {

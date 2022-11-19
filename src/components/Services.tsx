@@ -76,6 +76,7 @@ function Services() {
       lineHeight: '20px',
       color: '#06283D',
       textAlign: 'left',
+      fontFamily: 'Inter',
       [theme.breakpoints.up('md')]: {
         fontSize: '15px',
         lineHeight: '30px',
@@ -160,6 +161,7 @@ function Services() {
       fontSize: '16px',
       lineHeight: '20px',
       color: '#06283D',
+      fontFamily: 'Inter',
       [theme.breakpoints.up('md')]: {
         fontSize: '20px',
         lineHeight: '40px',
@@ -232,6 +234,7 @@ function Services() {
       paddingTop: '28px',
       paddingBottom: '28px',
       paddingRight: '20px',
+      fontFamily: 'Inter',
       [theme.breakpoints.up('md')]: {
         fontSize: '20px',
         padding: '44px 25px',

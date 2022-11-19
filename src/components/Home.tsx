@@ -139,6 +139,7 @@ function Home(props) {
       color: '#06283D',
       [theme.breakpoints.up('md')]: {
         fontSize: '20px',
+        lineHeight: '35px',
       },
     },
     aboutUsContainer: {
@@ -169,9 +170,12 @@ function Home(props) {
     companyText: {
       color: '#4C81C7',
       fontWeight: 700,
-    },
-    aboutUsParagraph: {
-      marginTop: '0px',
+      fontSize: '16px',
+      lineHeight: '28px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '20px',
+        lineHeight: '35px',
+      },
     },
     imageBackgroundWrapper: {
       backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/HomeBackground.png'})`,
@@ -210,11 +214,9 @@ function Home(props) {
       </Box>
       
       <Box sx={styles.aboutUsContainer}>
-        <Box sx={styles.aboutUsContent}>
-          <p style={styles.aboutUsParagraph}><span style={styles.companyText}>ETC Services</span> is committed to help you with your business needs by facilitating and overseeing everything from recruitment, onboarding, payroll, and other administrative and support functions. You have full control of your remote staff while we take care of the rest.</p>
-          <p>By using our in-house tools, you can communicate with your staff directly and see their performance in real time. This makes collaboration much easier.</p>
-          <p>We aim to provide businesses with quality remote staff that match your requirements and achieve scalable growth for your organization. We make the process simple and easy for you!</p>
-        </Box>
+        <Typography component='p' sx={styles.aboutUsContent}><Typography component='span' sx={styles.companyText}>ETC Services</Typography> is committed to help you with your business needs by facilitating and overseeing everything from recruitment, onboarding, payroll, and other administrative and support functions. You have full control of your remote staff while we take care of the rest.</Typography><br/>
+        <Typography component='p' sx={styles.aboutUsContent}>By using our in-house tools, you can communicate with your staff directly and see their performance in real time. This makes collaboration much easier.</Typography><br/>
+        <Typography component='p' sx={styles.aboutUsContent}>We aim to provide businesses with quality remote staff that match your requirements and achieve scalable growth for your organization. We make the process simple and easy for you!</Typography><br/>
       </Box>
     </>
   );
