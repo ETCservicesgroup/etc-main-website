@@ -16,18 +16,15 @@ function Services(props: IHomeProps) {
       backgroundPosition: 'center',
       backgroundSize: 'cover',
       padding: '30px 16px',
-      marginBottom: '35px',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       [theme.breakpoints.up('md')]: {
         height: '150px',
         padding: '37px 32px',
-        marginBottom: '58px',
       },
       [theme.breakpoints.up('lg')]: {
         height: '200px',
-        marginBottom: '78px',
       },
       [theme.breakpoints.up('xl')]: {
         paddingLeft: '181px',
@@ -283,7 +280,33 @@ function Services(props: IHomeProps) {
     cardContainersWrapper: {
       display: 'flex',
       justifyContent: 'center',
-    }
+    },
+    headerLabelContainer: {
+      height: '130px',
+      textAlign: 'center',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      [theme.breakpoints.up('md')]: {
+        height: '155px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        height: '184px',
+      },
+    },
+    headerLabelContent: {
+      fontStyle: 'normal',
+      fontWeight: 700,
+      fontSize: '25px',
+      lineHeight: '75px',
+      color: '#4C81C7',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '40px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '45px',
+      },
+    },
   };
   const cardContents = [
     {
@@ -436,6 +459,9 @@ function Services(props: IHomeProps) {
           <Typography component='span' sx={styles.ourText}>Our</Typography>
           <Typography component='span' sx={{...styles.ourText, ...styles.servicesText}}> Services.</Typography>
         </Box>
+      </Box>
+      <Box sx={styles.headerLabelContainer}>
+        <Typography component='span' sx={styles.headerLabelContent}>Services we Provide</Typography>
       </Box>
       <Box sx={styles.cardContainersWrapper}>
         {/* @ts-ignore */}
