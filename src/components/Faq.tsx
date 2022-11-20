@@ -32,6 +32,14 @@ const Faq = (props: IFaqProps) => {
         paddingRight: '32px',
         marginBottom: '42px',
       },
+      [theme.breakpoints.up('lg')]: {
+        height: '200px',
+        paddingRight: '32px',
+        marginBottom: '45px',
+      },
+      [theme.breakpoints.up('xl')]: {
+        paddingRight: '196px',
+      },
     },
     headerContent: {
       fontStyle: 'normal',
@@ -42,11 +50,17 @@ const Faq = (props: IFaqProps) => {
       [theme.breakpoints.up('md')]: {
         fontSize: '60px',
       },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '70px',
+      },
     },
     faqContainer: {
       maxWidth: '390px',
       [theme.breakpoints.up('md')]: {
         maxWidth: '768px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        maxWidth: '1080px',
       },
     },
     faqLabel: {
@@ -58,6 +72,10 @@ const Faq = (props: IFaqProps) => {
       color: '#4C81C7',
       [theme.breakpoints.up('md')]: {
         fontSize: '40px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '55px',
+        lineHeight: '75px',
       },
     },
     faqLabelContainer: {
@@ -75,6 +93,13 @@ const Faq = (props: IFaqProps) => {
         maxWidth: '768px',
         height: '105px',
       },
+      [theme.breakpoints.up('lg')]: {
+        maxWidth: '1080px',
+        height: '163px',
+      },
+      [theme.breakpoints.up('xl')]: {
+        maxWidth: '1440px',
+      },
     },
     faqLabelContent: {
       fontStyle: 'normal',
@@ -85,6 +110,10 @@ const Faq = (props: IFaqProps) => {
       [theme.breakpoints.up('md')]: {
         fontSize: '16px',
         marginTop: '8px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '20px',
+        marginTop: '7px',
       },
     },
     accordionRoot: {
@@ -105,6 +134,13 @@ const Faq = (props: IFaqProps) => {
         borderBottom: '2px solid #4C81C7',
         marginBottom: '78px',
         borderRadius: '0px',
+      },
+      maxWidth: '358px',
+      [theme.breakpoints.up('md')]: {
+        maxWidth: '704px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        maxWidth: '904px',
       },
     },
     accordionLabel: {
@@ -138,11 +174,15 @@ const Faq = (props: IFaqProps) => {
       },
     },
     accordionLabelContentWrapper: {
-      paddingRight: '15px',
-      paddingLeft: '56px',
+      paddingRight: '0px',
+      paddingLeft: '40px',
       [theme.breakpoints.up('md')]: {
-        paddingRight: '32px',
-        paddingLeft: '66px',
+        paddingRight: '0px',
+        paddingLeft: '34px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        paddingRight: '44px',
+        paddingLeft: '44px',
       },
     },
     accordionContent: {
@@ -157,10 +197,14 @@ const Faq = (props: IFaqProps) => {
       },
     },
     accordionContentContainer: {
-      padding: '23px 56px',
+      padding: '23px 40px',
       paddingTop: '0px',
       [theme.breakpoints.up('md')]: {
-        padding: '32px 66px',
+        padding: '32px 34px',
+        paddingTop: '0px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        padding: '22px 44px',
         paddingTop: '0px',
       },
     },
@@ -178,6 +222,10 @@ const Faq = (props: IFaqProps) => {
         height: '300px',
         padding: '98px 33px',
       },
+      [theme.breakpoints.up('lg')]: {
+        height: '330px',
+        padding: '80px 33px',
+      },
     },
     footerContent: {
       fontStyle: 'normal',
@@ -189,12 +237,18 @@ const Faq = (props: IFaqProps) => {
       [theme.breakpoints.up('md')]: {
         fontSize: '50px',
       },
+      [theme.breakpoints.up('lg')]: {
+        lineHeight: '75px',
+      },
     },
     buttonWrapper: {
       textAlign: 'center',
       marginTop: '23px',
       [theme.breakpoints.up('md')]: {
         marginTop: '59px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        marginTop: '31px',
       },
     },
     getStartedButtonSx: {
@@ -208,6 +262,10 @@ const Faq = (props: IFaqProps) => {
         width: '180px',
         height: '50px',
       },
+      [theme.breakpoints.up('lg')]: {
+        width: '234px',
+        height: '63px',
+      },
     },
     getStartedTextSx: {
       fontStyle: 'normal',
@@ -217,6 +275,10 @@ const Faq = (props: IFaqProps) => {
       color: '#FFFFFF',
       [theme.breakpoints.up('md')]: {
         fontSize: '23px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '30px',
+        lineHeight: '39px',
       },
     },
   }
@@ -293,10 +355,13 @@ const Faq = (props: IFaqProps) => {
                             fontSize: '30px',
                             fontWeight: 500,
                             position: 'absolute',
-                            left: '15px',
+                            left: '0px',
                             [theme.breakpoints.up('md')]: {
                               fontSize: '32px',
-                              left: '32px',
+                              left: '0px',
+                            },
+                            [theme.breakpoints.up('lg')]: {
+                              left: '0px',
                             },
                         }}>
                       -
@@ -309,10 +374,13 @@ const Faq = (props: IFaqProps) => {
                           fontSize: '30px',
                           fontWeight: 500,
                           position: 'absolute',
-                          left: '15px',
+                          left: '0px',
                           [theme.breakpoints.up('md')]: {
+                            left: '0px',
+                          },
+                          [theme.breakpoints.up('lg')]: {
                             fontSize: '32px',
-                            left: '32px',
+                            left: '0px',
                           },
                         }}>
                       +
