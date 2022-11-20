@@ -60,7 +60,7 @@ function Services(props: IHomeProps) {
       [theme.breakpoints.up('md')]: {
         boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)',
         borderRadius: '20px',
-        width: '238px',
+        maxWidth: '238px',
         display: 'flex',
         flexDirection: 'column',
         minHeight: '365px',
@@ -264,22 +264,26 @@ function Services(props: IHomeProps) {
       flexDirection: 'column',
       alignItems: 'center',
       marginBottom: '57px',
+      maxWidth: '390px',
       [theme.breakpoints.up('md')]: {
         flexDirection: 'row',
         flexWrap: 'wrap',
+        maxWidth: '522px',
         alignItems: 'stretch',
-        paddingRight: '121px',
-        paddingLeft: '121px',
-        justifyContent: 'space-evenly',
       },
       [theme.breakpoints.up('lg')]: {
+        alignItems: 'stretch',
         marginBottom: '74px',
+        maxWidth: '756px',
       },
       [theme.breakpoints.up('xl')]: {
-        paddingRight: '200px',
-        paddingLeft: '200px',
+        maxWidth: '1015px',
       },
     },
+    cardContainersWrapper: {
+      display: 'flex',
+      justifyContent: 'center',
+    }
   };
   const cardContents = [
     {
@@ -293,7 +297,21 @@ function Services(props: IHomeProps) {
         <li>Virtual Assistants</li>
         <li>Recruitment Assistants</li>
       </>,
-      cardContainerStyle: styles.cardContainerStyle,
+      cardContainerStyle: {
+        ...styles.cardContainerStyle,
+        [theme.breakpoints.up('md')]: {
+          marginRight: '46px',
+          boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)',
+          borderRadius: '20px',
+          maxWidth: '238px',
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '365px',
+        },
+        [theme.breakpoints.up('lg')]: {
+          marginRight: '21px',
+        },
+      },
       cardLabelStyle: styles.cardLabelStyle,
       cardContentStyle: styles.cardContentStyle,
       buttonWrapperStyle: styles.buttonWrapper,
@@ -310,7 +328,12 @@ function Services(props: IHomeProps) {
         <li>Credit & Collections Experts</li>
         <li>Accountants</li>
       </>,
-      cardContainerStyle: styles.cardContainerStyle,
+      cardContainerStyle: {
+        ...styles.cardContainerStyle,
+        [theme.breakpoints.up('lg')]: {
+          marginRight: '21px',
+        },
+      },
       cardLabelStyle: styles.cardLabelStyle,
       cardContentStyle: styles.cardContentStyle,
       buttonWrapperStyle: styles.buttonWrapper,
@@ -330,7 +353,24 @@ function Services(props: IHomeProps) {
         <li>SEO Specialists</li>
         <li>Telemarketers</li>
       </>,
-      cardContainerStyle: styles.cardContainerStyle,
+      cardContainerStyle: {
+        ...styles.cardContainerStyle,
+        [theme.breakpoints.up('md')]: {
+          marginRight: '46px',
+          boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)',
+          borderRadius: '20px',
+          maxWidth: '238px',
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '365px',
+        },
+        [theme.breakpoints.up('lg')]: {
+          marginRight: '0px',
+        },
+        [theme.breakpoints.up('xl')]: {
+          marginRight: '21px',
+        },
+      },
       cardLabelStyle: styles.cardLabelStyle,
       cardContentStyle: styles.cardContentStyle,
       buttonWrapperStyle: styles.buttonWrapper,
@@ -349,7 +389,15 @@ function Services(props: IHomeProps) {
         <li>Software Developers</li>
         <li>Software Testers</li>
       </>,
-      cardContainerStyle: styles.cardContainerStyle,
+      cardContainerStyle: {
+        ...styles.cardContainerStyle,
+        [theme.breakpoints.up('lg')]: {
+          marginRight: '21px',
+        },
+        [theme.breakpoints.up('xl')]: {
+          marginRight: '0px',
+        },
+      },
       cardLabelStyle: styles.cardLabelStyle,
       cardContentStyle: styles.cardContentStyle,
       buttonWrapperStyle: styles.buttonWrapper,
@@ -362,7 +410,18 @@ function Services(props: IHomeProps) {
       <>
         <li>Appointment Setter</li>
       </>,
-      cardContainerStyle: styles.cardContainerStyle,
+      cardContainerStyle: {
+        ...styles.cardContainerStyle,
+        [theme.breakpoints.up('md')]: {
+          marginRight: '46px',
+          boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.1)',
+          borderRadius: '20px',
+          maxWidth: '238px',
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '365px',
+        },
+      },
       cardLabelStyle: styles.cardLabelStyle,
       cardContentStyle: styles.cardContentStyle,
       buttonWrapperStyle: styles.buttonWrapper,
@@ -378,25 +437,27 @@ function Services(props: IHomeProps) {
           <Typography component='span' sx={{...styles.ourText, ...styles.servicesText}}> Services.</Typography>
         </Box>
       </Box>
-      {/* @ts-ignore */}
-      <Box sx={styles.cardsContainerStyle}>
-        {cardContents.map((cardContent) => {
-          return (
-            <Card
-              cardLabel = {cardContent.cardLabel}
-              cardContent = {cardContent.cardContent}
-              cardContainerStyle = {cardContent.cardContainerStyle}
-              cardLabelStyle = {cardContent.cardLabelStyle}
-              cardContentStyle = {cardContent.cardContentStyle}
-              page = {Pages.SERVICES}
-              buttonLabel = 'Hire Staff'
-              buttonWrapperStyle = {cardContent.buttonWrapperStyle}
-              buttonStyle = {cardContent.buttonStyle}
-              buttonLabelStyle = {cardContent.buttonTextStyle}
-              setVisiblePage = {setVisiblePage}
-              />
-          )
-        })}
+      <Box sx={styles.cardContainersWrapper}>
+        {/* @ts-ignore */}
+        <Box sx={styles.cardsContainerStyle}>
+          {cardContents.map((cardContent) => {
+            return (
+              <Card
+                cardLabel = {cardContent.cardLabel}
+                cardContent = {cardContent.cardContent}
+                cardContainerStyle = {cardContent.cardContainerStyle}
+                cardLabelStyle = {cardContent.cardLabelStyle}
+                cardContentStyle = {cardContent.cardContentStyle}
+                page = {Pages.SERVICES}
+                buttonLabel = 'Hire Staff'
+                buttonWrapperStyle = {cardContent.buttonWrapperStyle}
+                buttonStyle = {cardContent.buttonStyle}
+                buttonLabelStyle = {cardContent.buttonTextStyle}
+                setVisiblePage = {setVisiblePage}
+                />
+            )
+          })}
+        </Box>
       </Box>
       <Box sx={styles.serviceCoverageLabelContainer}>
         <Typography component='span' sx={styles.serviceCoverageLabel}>
