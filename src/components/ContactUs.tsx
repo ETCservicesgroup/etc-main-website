@@ -450,7 +450,7 @@ const ContactUs = (props: IContactUsProps) => {
       setFormSubmitted(true);
       setFormSent(false);
     }
-    emailjs.sendForm('process.env.REACT_APP_EMAILJS_SERVICE_KEY!', process.env.REACT_APP_EMAILJS_TEMPLATE_KEY!, form.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!)
+    emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_KEY!, process.env.REACT_APP_EMAILJS_TEMPLATE_KEY!, form.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!)
     .then((result) => {
         setFormSubmitted(true);
         setFormSent(true);
