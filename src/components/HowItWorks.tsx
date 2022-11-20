@@ -25,7 +25,6 @@ const HowItWorks = (props: IHowItWorksProps) => {
       backgroundSize: 'cover',
       height: '137px',
       paddingLeft: '16px',
-      marginBottom: '35px',
       backgroundPosition: 'center',
       display: 'flex',
       flexDirection: 'column',
@@ -33,11 +32,9 @@ const HowItWorks = (props: IHowItWorksProps) => {
       [theme.breakpoints.up('md')]: {
         height: '150px',
         paddingLeft: '32px',
-        marginBottom: '60px',
       },
       [theme.breakpoints.up('lg')]: {
         height: '200px',
-        marginBottom: '80px',
       },
       [theme.breakpoints.up('xl')]: {
         paddingLeft: '192px',
@@ -212,6 +209,57 @@ const HowItWorks = (props: IHowItWorksProps) => {
       [theme.breakpoints.up('lg')]: {
         maxWidth: '551px',
       },
+    },
+    headerLabelContainerWrapper: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+    headerLabelContainer: {
+      height: '178px',
+      display: 'flex',
+      flexDirection: 'column',
+      textAlign: 'center',
+      justifyContent: 'center',
+      alignItems: 'center',
+      [theme.breakpoints.up('md')]: {
+        height: '202px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        height: '249px',
+      },
+    },
+    headerLabel: {
+      fontFamily: 'Inter',
+      fontStyle: 'normal',
+      fontWeight: 700,
+      fontSize: '25px',
+      lineHeight: '40px',
+      color: '#4C81C7',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '40px',
+        lineHeight: '65px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: '45px',
+        lineHeight: '75px',
+      },
+    },
+    headerLabelContent: {
+      fontFamily: 'Inter',
+      fontStyle: 'normal',
+      fontWeight: 400,
+      fontSize: '14px',
+      lineHeight: '20px',
+      color: '#06283D',
+      maxWidth: '358px',
+      [theme.breakpoints.up('md')]: {
+        fontSize: '16px',
+        maxWidth: '439px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        maxWidth: '100vw',
+      },
     }
   };
 
@@ -283,6 +331,12 @@ const HowItWorks = (props: IHowItWorksProps) => {
         <Box>
           <Typography component='span' sx={styles.howText}>How it</Typography>
           <Typography component='span' sx={styles.workText}> Works.</Typography>
+        </Box>
+      </Box>
+      <Box sx={styles.headerLabelContainerWrapper}>
+        <Box sx={styles.headerLabelContainer}>
+          <Typography component='span' sx={styles.headerLabel}>How ETC SERVICES Works</Typography>
+          <Typography component='span' sx={styles.headerLabelContent}>We demonstrate a step-by-step process on how we may assist you in running your business.</Typography>
         </Box>
       </Box>
       <Box>
