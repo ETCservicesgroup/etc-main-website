@@ -147,8 +147,6 @@ const WhyUs = (props: IWhyUsProps) => {
     whatWeOfferContainer: {
       borderTop: '2px solid #EEEEEE',
       paddingTop: '46px',
-      paddingLeft: '16px',
-      paddingRight: '16px',
       marginBottom: '19px',
       [theme.breakpoints.up('md')]: {
         paddingTop: '90px',
@@ -165,7 +163,10 @@ const WhyUs = (props: IWhyUsProps) => {
     cardsContainer: {
       display: 'flex',
       flexWrap: 'wrap',
-      justifyContent: 'space-around',
+      maxWidth: '358px',
+      [theme.breakpoints.up('md')]: {
+        maxWidth: '687px',
+      },
       [theme.breakpoints.up('lg')]: {
         width: '687px',
       },
@@ -220,6 +221,7 @@ const WhyUs = (props: IWhyUsProps) => {
       padding: '12px 10px',
       width: '169px',
       marginBottom: '20px',
+      minHeight: '255px',
       [theme.breakpoints.up('md')]: {
         fontSize: '30px',
         width: '100vw',
@@ -227,6 +229,7 @@ const WhyUs = (props: IWhyUsProps) => {
         textAlign: 'left',
         padding: '12px 28px',
         alignItems: 'center',
+        minHeight: '120px',
       },
       [theme.breakpoints.up('lg')]: {
         width: '687px',
@@ -294,7 +297,11 @@ const WhyUs = (props: IWhyUsProps) => {
     },
     imageLG: {
       height: 'calc(100% - 20px)'
-    }
+    },
+    cardsContainerWrapper: {
+      display: 'flex',
+      justifyContent: 'center',
+    },
   }
 
   const cardContents = [
@@ -302,7 +309,20 @@ const WhyUs = (props: IWhyUsProps) => {
       iconUrl: '/assets/HiringIcon.png',
       cardLabel: 'Hiring',
       cardContent: 'We will help you find a solution in searching and hiring for virtual staff that is qualified and will meet your specific business needs.',
-      cardContainerStyle: styles.cardContainerStyle,
+      cardContainerStyle: {
+        ...styles.cardContainerStyle,
+        marginRight: '20px',
+        [theme.breakpoints.up('md')]: {
+          fontSize: '30px',
+          width: '100vw',
+          flexDirection: 'row',
+          textAlign: 'left',
+          padding: '12px 28px',
+          alignItems: 'center',
+          minHeight: '120px',
+          marginRight: '0px'
+        },
+      },
       iconStyle: styles.iconStyle,
       cardLabelStyle: styles.cardLabelStyle,
       cardContentStyle: styles.cardContentStyle,
@@ -322,7 +342,20 @@ const WhyUs = (props: IWhyUsProps) => {
       iconUrl: '/assets/FlexibilityIcon.png',
       cardLabel: 'Flexibility',
       cardContent: 'We listen and adapt to changes. We will understand your needs and we will help you meet your business requirements.',
-      cardContainerStyle: styles.cardContainerStyle,
+      cardContainerStyle: {
+        ...styles.cardContainerStyle,
+        marginRight: '20px',
+        [theme.breakpoints.up('md')]: {
+          fontSize: '30px',
+          width: '100vw',
+          flexDirection: 'row',
+          textAlign: 'left',
+          padding: '12px 28px',
+          alignItems: 'center',
+          minHeight: '120px',
+          marginRight: '0px'
+        },
+      },
       iconStyle: styles.iconStyle,
       cardLabelStyle: styles.cardLabelStyle,
       cardContentStyle: styles.cardContentStyle,
@@ -342,7 +375,20 @@ const WhyUs = (props: IWhyUsProps) => {
       iconUrl: '/assets/HoursWorkedIcon.png',
       cardLabel: 'Hours Worked',
       cardContent: 'You only pay for the hours your staff worked.',
-      cardContainerStyle: styles.cardContainerStyle,
+      cardContainerStyle: {
+        ...styles.cardContainerStyle,
+        marginRight: '20px',
+        [theme.breakpoints.up('md')]: {
+          fontSize: '30px',
+          width: '100vw',
+          flexDirection: 'row',
+          textAlign: 'left',
+          padding: '12px 28px',
+          alignItems: 'center',
+          minHeight: '120px',
+          marginRight: '0px'
+        },
+      },
       iconStyle: styles.iconStyle,
       cardLabelStyle: styles.cardLabelStyle,
       cardContentStyle: styles.cardContentStyle,
@@ -362,7 +408,23 @@ const WhyUs = (props: IWhyUsProps) => {
       iconUrl: '/assets/AccessIcon.png',
       cardLabel: 'Access',
       cardContent: 'You will have access to your staff performance by using our remote work monitoring tool. This will ensure your offshore staff are being highly productive and performing as they should deliver and exceed your goals and expectations.',
-      cardContainerStyle: styles.cardContainerStyle,
+      cardContainerStyle: {
+        ...styles.cardContainerStyle,
+        width: '209px',
+        marginRight: '74px',
+        marginLeft: '75px',
+        [theme.breakpoints.up('md')]: {
+          fontSize: '30px',
+          width: '100vw',
+          flexDirection: 'row',
+          textAlign: 'left',
+          padding: '12px 28px',
+          alignItems: 'center',
+          minHeight: '120px',
+          marginRight: '0px',
+          marginLeft: '0px',
+        },
+      },
       iconStyle: styles.iconStyle,
       cardLabelStyle: styles.cardLabelStyle,
       cardContentStyle: styles.cardContentStyle,
@@ -402,22 +464,24 @@ const WhyUs = (props: IWhyUsProps) => {
         <Box sx={styles.imageContainerLG}>
           <Box component='img' src={process.env.PUBLIC_URL + '/assets/WhyUsImageLG.png'} alt="Group of people" sx={styles.imageLG}/>
         </Box>
-        <Box sx={styles.cardsContainer}>
-          {cardContents.map((cardContent) => {
-            return (
-              <Card
-                iconUrl = {cardContent.iconUrl}
-                cardLabel = {cardContent.cardLabel}
-                cardContent = {cardContent.cardContent}
-                cardContainerStyle = {cardContent.cardContainerStyle}
-                iconStyle = {cardContent.iconStyle}
-                cardLabelStyle = {cardContent.cardLabelStyle}
-                cardContentStyle = {cardContent.cardContentStyle}
-                iconAlt = {cardContent.iconAlt}
-                page = {Pages.WHY_US}
-                />
-            )
-          })}
+        <Box sx={styles.cardsContainerWrapper}>
+          <Box sx={styles.cardsContainer}>
+            {cardContents.map((cardContent) => {
+              return (
+                <Card
+                  iconUrl = {cardContent.iconUrl}
+                  cardLabel = {cardContent.cardLabel}
+                  cardContent = {cardContent.cardContent}
+                  cardContainerStyle = {cardContent.cardContainerStyle}
+                  iconStyle = {cardContent.iconStyle}
+                  cardLabelStyle = {cardContent.cardLabelStyle}
+                  cardContentStyle = {cardContent.cardContentStyle}
+                  iconAlt = {cardContent.iconAlt}
+                  page = {Pages.WHY_US}
+                  />
+              )
+            })}
+          </Box>
         </Box>
       </Box>
       <Box sx={styles.imageContainer}>
