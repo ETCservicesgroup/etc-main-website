@@ -379,7 +379,49 @@ const ContactUs = (props: IContactUsProps) => {
         paddingRight: '200px',
         paddingLeft: '200px',
       },
-    }
+    },
+    contactUsText: {
+      fontStyle: 'normal',
+      fontWeight: 700,
+      fontSize: '15px',
+      lineHeight: '30px',
+      textAlign: 'center',
+      color: '#06283D',
+    },
+    contactUsErrorContent: {
+      fontStyle: 'normal',
+      fontWeight: 600,
+      fontSize: '14px',
+      lineHeight: '17px',
+      color: '#4C81C7',
+    },
+    contactUsCardError: {
+      width: '358px',
+      textAlign: 'center',
+      borderTop: '1px solid #EEEEEE',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      marginBottom: '43px',
+      paddingTop: '25px',
+      [theme.breakpoints.up('md')]: {
+        width: '600px'
+      },
+      [theme.breakpoints.up('lg')]: {
+        width: '800px',
+      },
+    },
+    contactUsCardErrorContent: {
+      maxWidth: '265px',
+      marginTop: '17px',
+      [theme.breakpoints.up('md')]: {
+        display: 'flex',
+        maxWidth: '600px',
+      },
+      [theme.breakpoints.up('lg')]: {
+        maxWidth: '800px',
+      },
+    },
   };
   const { setVisiblePage } = props;
   const form = React.useRef<null | HTMLFormElement>();
@@ -404,7 +446,11 @@ const ContactUs = (props: IContactUsProps) => {
   //@ts-ignore
   const sendEmail = (event) => {
     event.preventDefault();
-    emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE_KEY!, process.env.REACT_APP_EMAILJS_TEMPLATE_KEY!, form.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!)
+    if (process.env.REACT_APP_EMAILJS_SERVICE_KEY === undefined || process.env.REACT_APP_EMAILJS_TEMPLATE_KEY === undefined || process.env.REACT_APP_EMAILJS_PUBLIC_KEY === undefined) {
+      setFormSubmitted(true);
+      setFormSent(false);
+    }
+    emailjs.sendForm('process.env.REACT_APP_EMAILJS_SERVICE_KEY!', process.env.REACT_APP_EMAILJS_TEMPLATE_KEY!, form.current!, process.env.REACT_APP_EMAILJS_PUBLIC_KEY!)
     .then((result) => {
         setFormSubmitted(true);
         setFormSent(true);
@@ -413,6 +459,7 @@ const ContactUs = (props: IContactUsProps) => {
         setFormSent(false);
     });
   };
+
   const handleClick = () => {
     setVisiblePage(Pages.HOME);
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
@@ -556,7 +603,35 @@ const ContactUs = (props: IContactUsProps) => {
       <Box sx={styles.formSentContainer}>
         <Box component='img' sx={styles.formSentImage} src={process.env.PUBLIC_URL + 'assets/formError.png'}/>
         <Typography component='span' sx={styles.formSentLabel}>Message not delivered.</Typography>
-        <Typography component='span' sx={styles.formSentContent}>We were unable to deliver the message despite of several attempts. Please Try again later.</Typography>
+        <Typography component='span' sx={{
+          ...styles.formSentContent,
+          marginBottom: '51px',
+        }}
+          >
+            We were unable to deliver the message despite of several attempts. Please try again later.
+          </Typography>
+        <Box sx={styles.contactUsCardError}>
+          <Box>
+            <Typography component='span' sx={styles.contactUsText}>You may contact us directly at</Typography>
+          </Box>
+          <Box sx={styles.contactUsCardErrorContent}>
+            <Box sx={{
+              ...styles.contactNumberContainer,
+              marginBottom: '19px',
+              [theme.breakpoints.up('md')]: {
+                marginBottom: '0px',
+                marginRight: '38px'
+              },
+              }}>
+                <CallIcon sx={styles.contactUsIcon}/>
+                <Typography component='span' sx={styles.contactUsErrorContent}>+63 917 1624539</Typography>
+            </Box>
+            <Box sx={styles.emailContainer}>
+              <EmailIcon sx={styles.contactUsIcon}/>
+              <Typography component='span' sx={styles.contactUsErrorContent}>info@etcservices.com</Typography>
+            </Box>
+          </Box>
+        </Box>
         <Box sx={styles.buttonWrapper}>
           <Button variant='contained' sx={{...styles.getStartedButtonSx,
             width: '181px',
