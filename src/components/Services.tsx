@@ -461,7 +461,7 @@ function Services(props: IHomeProps) {
         </Box>
       </Box>
       <Box sx={styles.headerLabelContainer}>
-        <Typography component='span' sx={styles.headerLabelContent}>Services we Provide</Typography>
+        <Typography component='span' sx={styles.headerLabelContent}>Services We Provide</Typography>
       </Box>
       <Box sx={styles.cardContainersWrapper}>
         {/* @ts-ignore */}
