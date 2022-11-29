@@ -196,7 +196,7 @@ function Header(props: IHeaderProps) {
 
   const [menuAnchorEl, setMenuAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(menuAnchorEl);
-  const handleClose = (event: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
+  const handleClose = (event: React.MouseEvent<HTMLLIElement | HTMLDivElement, MouseEvent>) => {
     event.stopPropagation();
     setMenuAnchorEl(null);
   };
