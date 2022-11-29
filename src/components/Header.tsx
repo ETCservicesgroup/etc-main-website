@@ -54,6 +54,7 @@ function Header(props: IHeaderProps) {
     logoContainer: {
       width: '135px',
       height: '50px',
+      cursor: 'pointer',
       [theme.breakpoints.up('md')]: {
         height: '80px',
         width: '220px',
@@ -204,7 +205,15 @@ function Header(props: IHeaderProps) {
     <>
     {/* @ts-ignore */}
     <Box sx={styles.headerContainer}>
-      <Box sx={styles.logoContainer}>
+      <Box 
+        sx={styles.logoContainer}
+        onClick={(e) => {
+          e.stopPropagation();
+          setVisiblePage(Pages.HOME);
+          handleClose(e);
+          window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+        }}
+      >
         <img src={process.env.PUBLIC_URL + '/assets/Logo.png'} alt="ETC Services Logo" style={styles.headerLogo}></img>
       </Box>
       <IconButton 
