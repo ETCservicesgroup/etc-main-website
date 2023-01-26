@@ -624,7 +624,7 @@ const ContactUs = (props: IContactUsProps) => {
               },
               }}>
                 <CallIcon sx={styles.contactUsIcon}/>
-                <Typography component='span' sx={styles.contactUsErrorContent}>+63 917 1624539</Typography>
+                <Typography component='span' sx={styles.contactUsErrorContent}>+63 917 5059386</Typography>
             </Box>
             <Box sx={styles.emailContainer}>
               <EmailIcon sx={styles.contactUsIcon}/>

@@ -233,7 +233,7 @@ function Header(props: IHeaderProps) {
         <Box sx={styles.contactUsButtonsContainer}>
           <Box sx={styles.contactNumberContainer}>
               <CallIcon sx={styles.contactUsIcon}/>
-              <Typography component='span' sx={styles.iconLabel}>+63 917 1624539</Typography>
+              <Typography component='span' sx={styles.iconLabel}>+63 917 5059386</Typography>
           </Box>
           <Button 
           variant='contained' 
