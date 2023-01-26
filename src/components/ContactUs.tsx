@@ -545,11 +545,11 @@ const ContactUs = (props: IContactUsProps) => {
             <Box sx={styles.contactUsCard}>
               <Box sx={styles.contactNumberContainer}>
                   <CallIcon sx={styles.contactUsIcon}/>
-                  <Typography component='span' sx={styles.iconLabel}>+63 9171624539</Typography>
+                  <Typography component='span' sx={styles.iconLabel}>+63 9175059386</Typography>
               </Box>
               <Box sx={styles.emailContainer}>
                   <EmailIcon sx={styles.contactUsIcon}/>
-                  <Typography component='span' sx={styles.iconLabel}>info@etcservices.com</Typography>
+                  <Typography component='span' sx={styles.iconLabel}>info@etcservicesgroup.com</Typography>
               </Box>
               <Box sx={styles.addressContainer}>
                   <PlaceIcon sx={styles.contactUsIcon}/>
@@ -628,7 +628,7 @@ const ContactUs = (props: IContactUsProps) => {
             </Box>
             <Box sx={styles.emailContainer}>
               <EmailIcon sx={styles.contactUsIcon}/>
-              <Typography component='span' sx={styles.contactUsErrorContent}>info@etcservices.com</Typography>
+              <Typography component='span' sx={styles.contactUsErrorContent}>info@etcservicesgroup.com</Typography>
             </Box>
           </Box>
         </Box>

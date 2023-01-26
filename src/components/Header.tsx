@@ -243,7 +243,7 @@ function Header(props: IHeaderProps) {
             window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
           }}>
             <EmailIcon sx={styles.emailIcon}/>
-            <Typography component='span' sx={styles.buttonLabel}>info@etcservices.com</Typography>
+            <Typography component='span' sx={styles.buttonLabel}>info@etcservicesgroup.com</Typography>
           </Button>
         </Box>
       </Box>

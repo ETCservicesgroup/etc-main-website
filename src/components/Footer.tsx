@@ -151,7 +151,7 @@ function Footer(props: IHeaderProps) {
           </Typography>
           <Box>
             <EmailIcon sx={styles.emailIcon}/>
-            <Typography component='a' sx={styles.contactEmailText}>info@etcservices.com</Typography>
+            <Typography component='a' sx={styles.contactEmailText}>info@etcservicesgroup.com</Typography>
           </Box>
           <Box sx={styles.footerIconsContainer}>
             <FacebookIcon sx={styles.icon}/>
